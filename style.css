@@ -1,416 +1,314 @@
-/* --- VARIABLES: Warm Palette  --- */
+/* --- 1. VARIABLES: SARV Theme (Beige, Gold, Brown) --- */
 :root {
-    --primary-brown: #5d4037;   /* Deep Warm Brown */
-    --gold-accent: #d4af37;     /* Soft Gold */
-    --soft-beige: #fdfbf7;      /* Page Background */
+    --primary-brown: #5d4037;   /* Warm Brown (Text/Buttons) */
+    --dark-brown: #3e2723;      /* Deep Brown (Footer/Headings) */
+    --gold-accent: #d4af37;     /* Soft Gold (Buttons/Highlights) */
+    --soft-beige: #fdfbf7;      /* Main Background */
     --warm-gradient: linear-gradient(135deg, #fdfbf7 0%, #f3e5ab 100%);
-    --text-dark: #3e2723;
+    
+    /* Neutral */
     --white: #ffffff;
+    --text-grey: #666;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif; /* Elegant */
+    --font-body: 'Lato', sans-serif; /* Clean */
 }
 
-/* --- TYPOGRAPHY --- */
+/* --- 2. RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--soft-beige);
-    color: var(--text-dark);
-    margin: 0;
+    font-family: var(--font-body);
+    color: var(--primary-brown);
     line-height: 1.6;
+    background-color: var(--soft-beige);
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-brown);
+    font-family: var(--font-heading);
+    color: var(--dark-brown);
+    font-weight: 700;
 }
 
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; padding: 0; }
+a { text-decoration: none; transition: 0.3s; color: inherit; }
+ul { list-style: none; }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-padding { padding: 80px 0; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 .text-center { text-align: center; }
 
-/* --- NAVIGATION --- */
+/* --- 3. TOP BAR --- */
+.top-bar {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.top-flex { display: flex; justify-content: space-between; align-items: center; }
+.social-links a { color: var(--gold-accent); margin-left: 15px; }
+.contact-link a:hover { color: var(--gold-accent); }
+.separator { margin: 0 10px; color: var(--gold-accent); }
+
+/* --- 4. NAVBAR --- */
 .navbar {
     background: var(--white);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(93, 64, 55, 0.1);
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-top: 4px solid var(--gold-accent);
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
 
+.logo { display: flex; align-items: center; gap: 12px; }
 .logo img { height: 50px; }
+.logo-text h2 { margin: 0; font-size: 1.5rem; line-height: 1; }
+.logo-text span { font-size: 0.75rem; letter-spacing: 1px; color: var(--gold-accent); text-transform: uppercase; }
 
-#nav-links { display: flex; gap: 30px; align-items: center; }
-
-#nav-links a {
+.nav-menu { display: flex; gap: 30px; }
+.nav-menu a {
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
     color: var(--primary-brown);
-    transition: color 0.3s;
+    letter-spacing: 0.5px;
 }
+.nav-menu a:hover { color: var(--gold-accent); }
 
-#nav-links a:hover { color: var(--gold-accent); }
+/* --- BUTTONS --- */
+.btn-gold {
+    background-color: var(--gold-accent);
+    color: var(--white);
+    padding: 10px 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.btn-gold:hover { background-color: var(--primary-brown); }
 
-.btn-nav {
+.btn-brown {
+    background-color: var(--primary-brown);
+    color: var(--white);
+    padding: 12px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 4px;
+}
+.btn-brown:hover { background-color: var(--gold-accent); }
+
+.btn-outline {
+    display: block; width: 100%;
     border: 1px solid var(--primary-brown);
-    padding: 8px 20px;
-    border-radius: 30px;
+    color: var(--primary-brown);
+    padding: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
 }
+.btn-outline:hover { background: var(--primary-brown); color: var(--white); }
 
-/* --- HERO SECTION --- */
-.hero {
-    /* Use a warm image or gradient here */
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-brown); }
+
+/* --- 5. HERO SECTION --- */
+.hero-section {
+    /* Uses gradient + image */
     background: linear-gradient(rgba(62, 39, 35, 0.5), rgba(62, 39, 35, 0.5)), url('assets/sakhi saheli flyer.jpeg');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 550px;
+    position: relative;
     display: flex;
     align-items: center;
-    text-align: center;
-    color: white;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    color: #fff; /* White for contrast on image */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
+.hero-content { position: relative; z-index: 2; }
+
+/* The "Nanhi Kali" Text Box */
+.hero-text-box {
+    background: rgba(253, 251, 247, 0.95);
+    padding: 40px;
+    max-width: 500px;
+    border-left: 8px solid var(--gold-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.hero p { font-size: 1.4rem; font-weight: 300; margin-bottom: 30px; }
+.hero-text-box h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; }
+.highlight-text { color: var(--gold-accent); font-style: italic; }
+.hero-text-box p { font-size: 1.1rem; margin-bottom: 25px; color: var(--text-grey); }
 
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    margin: 0 10px;
+/* --- 6. IMPACT STRIP --- */
+.impact-strip {
+    background-color: var(--gold-accent);
+    padding: 25px 0;
+    color: var(--white);
+}
+
+.impact-grid { display: flex; justify-content: space-around; text-align: center; }
+.stat-item { display: flex; flex-direction: column; }
+.count { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; line-height: 1; color: var(--dark-brown); }
+.label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-top: 5px; }
+
+/* --- 7. PROJECT CARDS (Modified) --- */
+.section-padding { padding: 80px 0; }
+.section-title { font-size: 2.5rem; margin-bottom: 15px; }
+.section-sub { margin-bottom: 50px; font-size: 1.1rem; color: var(--text-grey); max-width: 700px; margin: 0 auto; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid #e0d4c3;
+    border-radius: 6px;
+    overflow: hidden;
     transition: 0.3s;
 }
 
-.btn-primary { background: var(--gold-accent); color: var(--primary-brown); }
-.btn-primary:hover { background: #fff; }
-
-.btn-secondary { border: 2px solid white; color: white; }
-.btn-secondary:hover { background: white; color: var(--primary-brown); }
-
-/* --- ESSENCE & LAYOUT --- */
-.split-layout {
-    display: flex;
-    gap: 50px;
-    align-items: center;
+.project-card:hover { 
+    box-shadow: 0 15px 30px rgba(93, 64, 55, 0.1); 
+    transform: translateY(-5px); 
 }
 
-.lead-text {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--gold-accent);
-    margin-bottom: 20px;
-}
+/* CLICKABLE IMAGE CONTAINER */
+.card-img-link { display: block; overflow: hidden; }
 
-.image-collage {
+/* SMALLER IMAGE SIZE (180px height) */
+.card-image {
+    height: 180px; /* Reduced from usual 250px */
     position: relative;
-    flex: 1;
-    height: 300px;
-}
-
-.collage-img {
-    position: absolute;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    border: 4px solid var(--white);
-}
-
-.main-img { width: 70%; top: 0; left: 0; z-index: 1; }
-.sub-img { width: 50%; bottom: -20px; right: 0; z-index: 2; }
-
-/* --- VALUES (Circles)  --- */
-.white-bg { background: var(--white); }
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.value-circle {
-    text-align: center;
-    padding: 20px;
-}
-
-.icon-box {
-    width: 80px;
-    height: 80px;
-    background: var(--soft-beige);
-    border: 1px solid var(--gold-accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-size: 1.8rem;
-    color: var(--primary-brown);
-}
-
-/* --- INITIATIVES (Cards) [cite: 173] --- */
-.beige-gradient { background: var(--warm-gradient); }
-
-.initiatives-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.initiative-card {
-    background: var(--white);
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
 }
 
-.initiative-card:hover { transform: translateY(-5px); }
-
-.card-img img, .img-placeholder {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.img-placeholder {
+.card-image img, .img-placeholder {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease;
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    color: var(--primary-brown); 
-    font-weight: bold;
+    color: var(--primary-brown);
+    font-size: 2rem;
 }
 
-.card-text { padding: 25px; }
+/* Image Zoom on Hover */
+.project-card:hover .card-image img { transform: scale(1.05); }
 
-.card-text h3 {
-    color: var(--gold-accent);
-    font-size: 0.9rem;
+.badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--dark-brown);
+    color: var(--white);
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 5px;
 }
 
-.card-text h4 { font-size: 1.5rem; margin-bottom: 15px; }
+.card-body { padding: 25px; text-align: center; }
+.card-body h3 { font-size: 0.9rem; color: var(--gold-accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.card-body h4 { font-size: 1.4rem; margin-bottom: 12px; }
+.card-body p { font-size: 0.9rem; margin-bottom: 20px; color: var(--text-grey); }
 
-/* --- FOOTER CTA (Join Us) --- */
-.footer-cta {
-    background-color: var(--primary-brown);
-    color: var(--white);
-    text-align: center;
-}
+/* --- 8. ABOUT & FOOTER --- */
+.bg-beige { background-color: #f7f3e8; }
+.split-layout { display: flex; gap: 50px; align-items: center; }
+.text-block, .image-block { flex: 1; }
 
-.footer-cta h2 { color: var(--gold-accent); }
-.emotion-line { font-family: 'Playfair Display'; font-style: italic; font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; }
+.lead-text { font-size: 1.2rem; color: var(--primary-brown); font-style: italic; margin-bottom: 20px; font-family: var(--font-heading); }
+.trust-icons { margin-top: 25px; }
+.trust-icons img { height: 45px; margin-right: 20px; opacity: 0.8; mix-blend-mode: multiply; }
 
-.cta-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.cta-box {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-}
-
-.cta-box i { font-size: 2rem; color: var(--gold-accent); margin-bottom: 10px; }
-
-.contact-details {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 30px;
-    margin-top: 30px;
-}
-
-footer {
-    background: #3e2723;
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .nav-content { flex-direction: column; }
-    #nav-links { display: none; } /* Add JS toggle logic similar to previous */
-    .split-layout { flex-direction: column; }
-    .values-grid, .initiatives-grid, .cta-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.2rem; }
-    .image-collage { width: 100%; height: auto; }
-    .collage-img { position: relative; width: 100%; margin-bottom: 10px; }
-}
-/* --- ABOUT PAGE SPECIFIC STYLES --- */
-
-/* Page Header (Smaller than Hero) */
-.page-header {
-    background: linear-gradient(rgba(93, 64, 55, 0.8), rgba(93, 64, 55, 0.8)), url('assets/sakhi saheli flyer.jpeg'); /* Reusing existing asset */
-    background-size: cover;
-    background-position: center;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-/* Compliance Box */
-.compliance-box {
-    background: #fff;
-    border: 1px solid var(--gold-accent);
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.compliance-box h3 {
-    color: var(--primary-brown);
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.cert-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.cert-grid li {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Framed Image */
-.framed-image {
+.framed-img {
     width: 100%;
-    border-radius: 4px;
-    border: 8px solid white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* Vision Mission Grid */
-.vision-mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.vm-card {
-    background: var(--soft-beige);
-    padding: 40px;
-    border-radius: 8px;
-    text-align: left;
+    border: 8px solid var(--white);
+    box-shadow: 15px 15px 0px var(--gold-accent);
     transition: transform 0.3s;
 }
+.image-block a:hover .framed-img { transform: scale(1.02); }
 
-.vm-card:hover {
-    transform: translateY(-5px);
+footer {
+    background: var(--dark-brown);
+    color: #d7ccc8;
+    padding: 60px 0 20px;
 }
 
-.vm-card i {
-    font-size: 2.5rem;
-    color: var(--gold-accent);
-    margin-bottom: 20px;
+.footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+.col h4 { color: var(--gold-accent); margin-bottom: 20px; font-size: 1.1rem; letter-spacing: 1px; }
+.col a { display: block; margin-bottom: 10px; color: inherit; transition: 0.3s; }
+.col a:hover { color: var(--gold-accent); padding-left: 5px; }
+
+.footer-bottom { 
+    text-align: center; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding-top: 20px; 
+    font-size: 0.85rem; 
+    font-style: italic;
 }
 
-.mission-list {
-    margin-top: 15px;
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.mission-list li {
-    margin-bottom: 10px;
-}
-
-/* Leadership Grid */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.leader-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.leader-img img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: top;
-}
-
-.leader-info {
-    padding: 25px;
-}
-
-.leader-info h3 {
-    margin-bottom: 5px;
-    color: var(--primary-brown);
-}
-
-.designation {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--gold-accent);
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.experience-list {
-    margin-top: 15px;
-    font-size: 0.85rem;
-    color: #666;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-}
-
-.experience-list li {
-    margin-bottom: 8px;
-}
-
-/* Responsive adjustments for About Page */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .vision-mission-grid {
-        grid-template-columns: 1fr;
-    }
-    .cert-grid {
-        grid-template-columns: 1fr;
-    }
+    .nav-menu { display: none; }
+    .hamburger { display: block; }
+    .hero-text-box { margin: 0 auto; text-align: center; max-width: 95%; }
+    .impact-grid { flex-direction: column; gap: 20px; }
+    .project-grid { grid-template-columns: 1fr; }
+    .split-layout { flex-direction: column; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
 }
+/* --- Add to style.css --- */
+
+/* Wide Cards for Experience Section */
+.wide-card {
+    text-align: left;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--gold-accent);
+}
+
+/* Checklist Styles */
+.check-list {
+    list-style: none;
+    padding: 0;
+}
+.check-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-brown);
+}
+.check-list li i {
+    color: var(--gold-accent);
+}
+
+/* Budget Table Styles */
+.budget-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+.highlight-row {
+    background-color: var(--bg-gold-light);
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: var(--primary-brown);
+    font-weight: bold;
+    border: 1px solid var(--gold-accent);
+}
+
+/* Spacer Utility */
+.mb-50 { margin-bottom: 50px; }
