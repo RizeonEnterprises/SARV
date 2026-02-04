@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific Styles for Budget Table */
+        .budget-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-family: 'Lato', sans-serif; }
+        .budget-table th { background-color: var(--primary-brown); color: white; padding: 15px; text-align: left; font-weight: 600; }
+        .budget-table td { padding: 12px 15px; border-bottom: 1px solid #eee; color: var(--text-grey); }
+        .budget-table tr:last-child td { font-weight: bold; color: var(--primary-brown); background-color: var(--bg-gold-light); font-size: 1.1rem; }
+        
+        /* Governing Body Grid */
+        .governing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .governing-card { background: #fff; padding: 30px; border-left: 4px solid var(--gold-accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    </style>
 </head>
 <body>
 
@@ -33,34 +44,32 @@
         </div>
     </nav>
 
-    <header class="hero-section" style="height: 50vh; background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.5)), url('assets/sakhi saheli flyer.jpeg') center/cover;">
+    <header class="hero-section" style="background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.5)), url('assets/sakhi saheli flyer.jpeg') center/cover;">
         <div class="hero-overlay"></div>
         <div class="container hero-content text-center">
-            <span style="color: var(--gold-accent); letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 10px; display: block;">CSR Proposal</span>
+            <span style="color: var(--gold-accent); letter-spacing: 2px; font-weight: bold; display: block; margin-bottom: 10px;">CSR PROPOSAL</span>
             <h1 style="color: #fff; font-size: 3.5rem;">Sakhi Saheli</h1>
-            <p style="color: #fdfbf7; font-size: 1.3rem; max-width: 700px; margin: 0 auto;">Menstrual Health, Awareness & Dignity Initiative<br>(Delhi NCR)</p>
+            <p style="color: #fdfbf7; font-size: 1.3rem;">Menstrual Health, Awareness & Dignity Initiative<br>(Delhi NCR)</p>
         </div>
     </header>
 
     <section class="section-padding bg-warm">
         <div class="container split-layout">
             <div class="text-block">
-                <h2 class="section-title">The Challenge</h2>
-                <p class="lead-text">Despite growing awareness, there remains a persistent gap in access to sustained education and dignity-led engagement for adolescent girls in underserved communities.</p>
-                <p><strong>Sakhi Saheli</strong> responds to this gap by combining:</p>
+                <h2 class="section-title">Project Overview</h2>
+                <p class="lead-text">Sakhi Saheli is a women-centric menstrual health initiative combining awareness sessions with access to safe menstrual hygiene products for adolescent girls and women from underprivileged communities.</p>
+                
+                <h3 style="margin-top: 30px; font-size: 1.4rem; color: var(--primary-brown);">Project Rationale</h3>
+                <p>Despite growing awareness around menstrual health, research insights continue to highlight a persistent gap in access, sustained education, and dignity-led engagement.</p>
+                <p><strong>Sakhi Saheli</strong> responds to this gap by integrating:</p>
                 <ul class="check-list" style="margin-top: 15px;">
-                    <li><i class="fas fa-check" style="color: var(--gold-accent);"></i> Awareness Sessions</li>
-                    <li><i class="fas fa-check" style="color: var(--gold-accent);"></i> Access to Safe Hygiene Products</li>
-                    <li><i class="fas fa-check" style="color: var(--gold-accent);"></i> Community Trust & Behavioral Change</li>
+                    <li><i class="fas fa-check" style="color: var(--gold-accent); margin-right: 10px;"></i> Awareness & Education</li>
+                    <li><i class="fas fa-check" style="color: var(--gold-accent); margin-right: 10px;"></i> Access to Safe Hygiene Products</li>
+                    <li><i class="fas fa-check" style="color: var(--gold-accent); margin-right: 10px;"></i> Community Trust & Behavioral Change</li>
                 </ul>
             </div>
-            <div class="image-block" style="background: #fff; padding: 30px; border-radius: 8px; border-top: 5px solid var(--primary-brown); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <h3 style="color: var(--primary-brown); margin-bottom: 15px;">Project Overview</h3>
-                <p style="font-size: 1rem; line-height: 1.8;">A women-centric menstrual health initiative combining awareness sessions with access to safe menstrual hygiene products for adolescent girls and women from underprivileged communities in Delhi NCR.</p>
-                <div style="margin-top: 20px; display: flex; gap: 15px;">
-                    <img src="assets/mission shakti logo.jpg.jpeg" alt="Mission Shakti" style="height: 50px; opacity: 0.8;">
-                    <img src="assets/niti ayog logo.jpg.jpeg" alt="Niti Aayog" style="height: 50px; opacity: 0.8;">
-                </div>
+            <div class="image-block">
+                <img src="assets/sakhi saheli flyer.jpeg" alt="Sakhi Saheli Workshop" class="framed-img">
             </div>
         </div>
     </section>
@@ -69,104 +78,141 @@
         <div class="container">
             <div class="text-center mb-50">
                 <h2 class="section-title">Indicative Budget</h2>
-                <p class="section-sub">Structured to ensure maximum beneficiary reach and transparency.</p>
+                <p class="section-sub">Structured to ensure maximum beneficiary reach, transparency, and efficient utilisation of CSR funds.</p>
             </div>
 
             <div class="project-grid" style="grid-template-columns: 1fr;">
-                <div class="project-card" style="background: #fff; border: 1px solid #eee; overflow: hidden;">
-                    <div style="background: var(--primary-brown); color: white; padding: 15px 25px; display: flex; justify-content: space-between; font-weight: bold;">
-                        <span>Budget Head</span>
-                        <span>Amount (₹)</span>
-                    </div>
-                    
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-box-open" style="color: var(--gold-accent); margin-right: 10px;"></i> Menstrual Hygiene Kits</span>
-                        <strong>1,40,000</strong>
-                    </div>
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-chalkboard-teacher" style="color: var(--gold-accent); margin-right: 10px;"></i> Awareness Sessions & Facilitators</span>
-                        <strong>30,000</strong>
-                    </div>
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-map-marker-alt" style="color: var(--gold-accent); margin-right: 10px;"></i> Local Coordination & Logistics</span>
-                        <strong>25,000</strong>
-                    </div>
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-book" style="color: var(--gold-accent); margin-right: 10px;"></i> IEC & Training Material</span>
-                        <strong>20,000</strong>
-                    </div>
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-tools" style="color: var(--gold-accent); margin-right: 10px;"></i> Administrative & Contingency</span>
-                        <strong>20,000</strong>
-                    </div>
-                    <div class="budget-row" style="padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
-                        <span><i class="fas fa-file-invoice" style="color: var(--gold-accent); margin-right: 10px;"></i> Documentation & Reporting</span>
-                        <strong>15,000</strong>
-                    </div>
-
-                    <div style="background: var(--bg-gold-light); padding: 20px 25px; display: flex; justify-content: space-between; color: var(--primary-brown); font-size: 1.2rem; font-weight: bold; border-top: 2px solid var(--gold-accent);">
-                        <span>Total Project Cost</span>
-                        <span>₹ 2,50,000</span>
-                    </div>
+                <div class="project-card" style="padding: 0; overflow: hidden; border: 1px solid #e0e0e0;">
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Budget Head</th>
+                                <th style="text-align: right;">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Menstrual Hygiene Kits</td>
+                                <td style="text-align: right;">1,40,000/-</td>
+                            </tr>
+                            <tr>
+                                <td>Awareness Sessions & Facilitators</td>
+                                <td style="text-align: right;">30,000/-</td>
+                            </tr>
+                            <tr>
+                                <td>IEC & Training Material</td>
+                                <td style="text-align: right;">20,000/-</td>
+                            </tr>
+                            <tr>
+                                <td>Local Coordination & Logistics</td>
+                                <td style="text-align: right;">25,000/-</td>
+                            </tr>
+                            <tr>
+                                <td>Administrative & Contingency</td>
+                                <td style="text-align: right;">20,000/-</td>
+                            </tr>
+                            <tr>
+                                <td>Documentation & Impact Reporting</td>
+                                <td style="text-align: right;">15,000/-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Project Cost</strong></td>
+                                <td style="text-align: right;"><strong>2,50,000/-</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding bg-warm">
+    <section class="section-padding bg-beige">
         <div class="container">
-            <h2 class="section-title text-center">CSR Partner Benefits</h2>
-            <div class="values-grid" style="margin-top: 40px;">
-                <div class="value-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Visibility</h3>
-                    <p>Prominent branding across programme materials and kits.</p>
+            <div class="text-center mb-50">
+                <h2 class="section-title">Track Record & Experience</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: #555;">
+                    SARV Foundation has led multiple women-centric initiatives aligned with national priorities like <strong>Mission Shakti</strong> and <strong>Atmanirbhar Bharat</strong>.
+                    Under the <strong>SHERISE</strong> flagship, we have implemented initiatives focused on welfare and recognition.
+                </p>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-brown);">Snapshots from Past Community Interventions</h3>
+            
+            <div class="project-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div class="card-image" style="height: 250px;">
+                    <img src="assets/aamna sherise flyer 26.png" alt="Sherise Event" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <div class="value-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Recognition</h3>
-                    <p>Formal acknowledgement and honour for contribution to women's health.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Impact</h3>
-                    <p>Detailed impact reports and documentation for your CSR records.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Alignment</h3>
-                    <p>Direct alignment with Mission Shakti & Atmanirbhar Bharat.</p>
+                <div class="card-image" style="height: 250px;">
+                    <img src="assets/sakhi saheli flyer.jpeg" alt="Deepa Malik Event" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section-padding bg-white">
-        <div class="container split-layout">
-            <div class="image-block">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <img src="assets/sakhi saheli flyer.jpeg" style="width: 100%; border-radius: 4px;">
-                    <img src="assets/aamna sherise flyer 26.png" style="width: 100%; border-radius: 4px;">
+        <div class="container">
+            <h2 class="section-title text-center">Governing Body</h2>
+            <div class="governing-grid">
+                
+                <div class="governing-card">
+                    <h3 style="color: var(--primary-brown); font-size: 1.2rem;">Mrs. Aamna Singh</h3>
+                    <span style="color: var(--gold-accent); font-size: 0.9rem; font-weight: bold; display: block; margin-bottom: 10px;">Managing Trustee</span>
+                    <p style="font-size: 0.95rem;">Leads SARV Foundation's strategic vision and programmes, focusing on women-centric initiatives in health, dignity, education, and empowerment.</p>
                 </div>
-            </div>
-            <div class="text-block">
-                <h2 class="section-title">Our Track Record</h2>
-                <p>SARV Foundation has led multiple women-centric initiatives. Under the <strong>SHERISE flagship</strong>, we have implemented initiatives focused on women's welfare and recognition.</p>
-                <p>We have worked on-ground in collaboration with:</p>
-                <ul class="check-list">
-                    <li><i class="fas fa-star" style="color: var(--gold-accent);"></i> IBHAAS (Emotional Well-being)</li>
-                    <li><i class="fas fa-star" style="color: var(--gold-accent);"></i> WCD Department (One Stop Centre)</li>
-                    <li><i class="fas fa-star" style="color: var(--gold-accent);"></i> Govt. of UP (Mission Shakti)</li>
-                </ul>
+
+                <div class="governing-card">
+                    <h3 style="color: var(--primary-brown); font-size: 1.2rem;">Mr. Gurparsad Singh</h3>
+                    <span style="color: var(--gold-accent); font-size: 0.9rem; font-weight: bold; display: block; margin-bottom: 10px;">Trustee / Director</span>
+                    <p style="font-size: 0.95rem;">Provides strategic guidance and governance support, enhancing SARV's compliance and implementation of community-focused initiatives.</p>
+                </div>
+
+                <div class="governing-card">
+                    <h3 style="color: var(--primary-brown); font-size: 1.2rem;">Mrs. Sonal Preet Kaur</h3>
+                    <span style="color: var(--gold-accent); font-size: 0.9rem; font-weight: bold; display: block; margin-bottom: 10px;">Trustee & Director, Social Welfare</span>
+                    <p style="font-size: 0.95rem;">Advocate guiding SARV's social welfare initiatives, contributing legal insight, governance, and advocacy for women and children.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="section-padding bg-gold-gradient text-center">
-        <div class="container" style="max-width: 700px;">
-            <h2 class="section-title">Join the Movement</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 30px;">We invite you to collaborate in creating sustained impact. We would be glad to connect further and align this initiative with your CSR objectives.</p>
-            <a href="mailto:sarv.team.foundation@gmail.com" class="btn btn-primary" style="background: var(--primary-brown); color: white; padding: 15px 40px; font-size: 1.1rem;">Request Full Proposal</a>
+    <section class="section-padding bg-warm">
+        <div class="container split-layout">
+            <div class="text-block">
+                <h2 class="section-title">CSR Partner Benefits</h2>
+                <ul class="check-list" style="margin-top: 20px;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-eye" style="color: var(--gold-accent); margin-right: 10px;"></i> <strong>Visibility:</strong> Prominent branding across programme materials and impact reports.</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-certificate" style="color: var(--gold-accent); margin-right: 10px;"></i> <strong>Recognition:</strong> Formal acknowledgement for contribution towards women's health.</li>
+                    <li><i class="fas fa-handshake" style="color: var(--gold-accent); margin-right: 10px;"></i> <strong>Impact:</strong> Direct contribution to National Priorities (Mission Shakti).</li>
+                </ul>
+            </div>
+            
+            <div class="text-block" style="background: white; padding: 30px; border-radius: 8px;">
+                <h3 style="color: var(--primary-brown); margin-bottom: 15px;">Next Steps</h3>
+                <p>We look forward to exploring a meaningful CSR engagement. We would be glad to connect further, address any queries, and align this initiative with your CSR objectives.</p>
+                <p style="font-size: 0.9rem; margin-top: 15px; color: #666;">*Bank account details will be shared upon confirmation of partnership.</p>
+            </div>
+        </div>
+        
+        <div class="container text-center" style="margin-top: 50px;">
+            <p style="margin-bottom: 20px; font-weight: bold; color: var(--primary-brown);">Aligned with National Priorities:</p>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <img src="assets/niti ayog logo.jpg.jpeg" alt="NITI Aayog" style="height: 60px;">
+                <img src="assets/mission shakti logo.jpg.jpeg" alt="Mission Shakti" style="height: 60px;">
+                <img src="assets/akam logo.png" alt="Azadi Ka Amrit Mahotsav" style="height: 60px;">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white text-center">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <div style="margin-top: 30px;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: var(--primary-brown);">Aamna Singh</p>
+                <p style="color: #666;">SARV Foundation</p>
+                <p style="margin-top: 10px;"><i class="fas fa-envelope" style="color: var(--gold-accent);"></i> sarv.team.foundation@gmail.com</p>
+                <p><i class="fas fa-phone" style="color: var(--gold-accent);"></i> +91 9654800900</p>
+            </div>
         </div>
     </section>
 
