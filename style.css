@@ -1,0 +1,255 @@
+/* --- VARIABLES: Nanhi Kali Theme --- */
+:root {
+    --primary-yellow: #ffc107; /* Marigold Yellow */
+    --primary-black: #000000;
+    --dark-grey: #333333;
+    --light-grey: #f4f4f4;
+    --white: #ffffff;
+    --font-heading: 'Roboto Slab', serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-grey);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-black);
+    font-weight: 700;
+}
+
+a { text-decoration: none; transition: 0.3s; color: inherit; }
+ul { list-style: none; }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.text-center { text-align: center; }
+
+/* --- TOP BAR --- */
+.top-bar {
+    background-color: var(--primary-black);
+    color: var(--white);
+    padding: 8px 0;
+    font-size: 0.8rem;
+}
+
+.top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a { color: var(--white); margin-left: 10px; }
+.social-links span { margin-right: 5px; font-weight: 600; }
+.contact-link a:hover { color: var(--primary-yellow); }
+
+/* --- NAVBAR --- */
+.navbar {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo img { height: 60px; }
+
+.nav-menu { display: flex; gap: 30px; }
+.nav-menu a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--primary-black);
+}
+.nav-menu a:hover { color: #d6a206; /* Darker Yellow */ }
+
+.btn-donate {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 12px 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    border: none;
+}
+.btn-donate:hover { background-color: var(--primary-black); color: var(--primary-yellow); }
+
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background: url('assets/sakhi saheli flyer.jpeg') no-repeat center center/cover;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3); /* Slight dark tint */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 500px;
+    border-left: 10px solid var(--primary-yellow); /* Signature Yellow Border */
+}
+
+.hero-text-box h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 15px; }
+.highlight-text { color: #d6a206; }
+.hero-text-box p { font-size: 1.1rem; margin-bottom: 25px; }
+
+.btn-black {
+    background: var(--primary-black);
+    color: var(--white);
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.btn-black:hover { background: var(--primary-yellow); color: var(--primary-black); }
+
+/* --- IMPACT STRIP --- */
+.impact-strip {
+    background-color: var(--primary-yellow);
+    padding: 30px 0;
+    color: var(--primary-black);
+}
+
+.impact-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-item { display: flex; flex-direction: column; }
+.count { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; line-height: 1; }
+.label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-top: 5px; }
+
+/* --- PROJECT CARDS --- */
+.section-padding { padding: 80px 0; }
+.section-title { font-size: 2.5rem; margin-bottom: 10px; }
+.section-sub { margin-bottom: 50px; font-size: 1.1rem; color: #666; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    border: 1px solid #e0e0e0;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.project-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); }
+
+.card-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+.card-image img, .img-placeholder { width: 100%; height: 100%; object-fit: cover; display: flex; align-items: center; justify-content: center; background: #eee; }
+
+.badge {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: var(--primary-black);
+    color: var(--white);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-body { padding: 25px; text-align: center; }
+.card-body h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.card-body p { font-size: 0.95rem; margin-bottom: 20px; color: #555; }
+
+.benefits-list { text-align: left; margin-bottom: 25px; font-size: 0.9rem; }
+.benefits-list li { margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px; }
+.benefits-list i { color: var(--primary-yellow); margin-right: 8px; }
+
+.btn-yellow {
+    display: block; width: 100%;
+    background: var(--primary-yellow);
+    color: var(--primary-black);
+    padding: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-outline {
+    display: block; width: 100%;
+    border: 2px solid var(--primary-black);
+    color: var(--primary-black);
+    padding: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.btn-outline:hover { background: var(--primary-black); color: var(--white); }
+
+/* --- ABOUT --- */
+.bg-grey { background-color: var(--light-grey); }
+.split-layout { display: flex; gap: 50px; align-items: center; }
+.text-block, .image-block { flex: 1; }
+
+.trust-icons { margin-top: 20px; }
+.trust-icons img { height: 50px; margin-right: 15px; filter: grayscale(100%); opacity: 0.7; }
+
+.framed-img {
+    width: 100%;
+    border: 10px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- NEWSLETTER STRIP --- */
+.newsletter-strip {
+    background: var(--primary-yellow);
+    padding: 40px 0;
+}
+.flex-strip { display: flex; justify-content: space-between; align-items: center; }
+.flex-strip h3 { font-size: 2rem; }
+
+/* --- FOOTER --- */
+footer {
+    background: var(--primary-black);
+    color: #bbb;
+    padding: 60px 0 20px;
+}
+
+.footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+.col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
+.col a { display: block; margin-bottom: 10px; color: #bbb; }
+.col a:hover { color: var(--primary-yellow); }
+
+.footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .hamburger { display: block; }
+    .hero-text-box { margin: 0 auto; text-align: center; }
+    .impact-grid { flex-direction: column; gap: 20px; }
+    .project-grid { grid-template-columns: 1fr; }
+    .split-layout { flex-direction: column; }
+    .flex-strip { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+}
