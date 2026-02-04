@@ -312,3 +312,102 @@ footer {
 
 /* Spacer Utility */
 .mb-50 { margin-bottom: 50px; }
+/* --- JOIN US PAGE STYLES --- */
+
+/* Gentle Background Texture */
+.textured-bg {
+    background-color: var(--soft-beige);
+    /* Creates a subtle dot pattern for texture */
+    background-image: radial-gradient(#d4af37 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 1;
+}
+
+/* Emotion Line Styling */
+.emotion-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-brown);
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+}
+.emotion-line::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold-accent);
+    margin: 15px auto 0;
+}
+
+/* Grid Layout for Join Cards */
+.join-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Individual Join Card */
+.join-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.08);
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.join-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--gold-accent);
+}
+
+.join-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-brown);
+}
+
+.join-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Earthy Tone Icon Circles */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Soft Earthy Tones Palette */
+.earth-tone-1 { background-color: #8D6E63; } /* Brown */
+.earth-tone-2 { background-color: #D4AF37; } /* Gold */
+.earth-tone-3 { background-color: #5D4037; } /* Dark Brown */
+.earth-tone-4 { background-color: #A1887F; } /* Beige-Brown */
+
+/* Text Button */
+.btn-text {
+    color: var(--gold-accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.btn-text:hover {
+    color: var(--primary-brown);
+    text-decoration: underline;
+}
