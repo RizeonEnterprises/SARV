@@ -1,255 +1,219 @@
-/* --- VARIABLES: Nanhi Kali Theme --- */
+/* --- VARIABLES: Warm Palette from Booklet --- */
 :root {
-    --primary-yellow: #ffc107; /* Marigold Yellow */
-    --primary-black: #000000;
-    --dark-grey: #333333;
-    --light-grey: #f4f4f4;
+    --primary-brown: #5d4037;   /* Warm Brown Title */
+    --gold-accent: #d4af37;     /* Gold */
+    --soft-beige: #fdfbf7;      /* Background */
+    --muted-beige: #f5f0e6;     /* Journey BG */
+    --maroon: #800000;          /* Accent */
+    --text-dark: #3e2723;
     --white: #ffffff;
-    --font-heading: 'Roboto Slab', serif;
-    --font-body: 'Open Sans', sans-serif;
+    
+    /* Gradients */
+    --warm-gradient: linear-gradient(135deg, #fdfbf7 0%, #f3e5ab 100%);
+    --gold-gradient: linear-gradient(to right, #f3e5ab, #e0c385);
 }
 
-/* --- RESET --- */
+/* --- GLOBAL STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: var(--font-body);
-    color: var(--dark-grey);
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
     line-height: 1.6;
+    background-color: var(--soft-beige);
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-    color: var(--primary-black);
-    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-brown);
 }
 
-a { text-decoration: none; transition: 0.3s; color: inherit; }
+a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 80px 0; }
 .text-center { text-align: center; }
 
-/* --- TOP BAR --- */
-.top-bar {
-    background-color: var(--primary-black);
-    color: var(--white);
-    padding: 8px 0;
-    font-size: 0.8rem;
-}
-
-.top-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.social-links a { color: var(--white); margin-left: 10px; }
-.social-links span { margin-right: 5px; font-weight: 600; }
-.contact-link a:hover { color: var(--primary-yellow); }
-
-/* --- NAVBAR --- */
+/* --- NAVIGATION --- */
 .navbar {
     background: var(--white);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(93,64,55,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-top: 4px solid var(--gold-accent);
 }
 
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
 
-.logo img { height: 60px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 50px; }
+.logo-text h2 { margin: 0; font-size: 1.5rem; line-height: 1; }
+.logo-text span { font-size: 0.8rem; letter-spacing: 1px; color: var(--gold-accent); }
 
-.nav-menu { display: flex; gap: 30px; }
-.nav-menu a {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    color: var(--primary-black);
-}
-.nav-menu a:hover { color: #d6a206; /* Darker Yellow */ }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; color: var(--primary-brown); }
+.nav-links a:hover { color: var(--gold-accent); }
 
-.btn-donate {
-    background-color: var(--primary-yellow);
-    color: var(--primary-black);
-    padding: 12px 25px;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-family: var(--font-heading);
-    border: none;
-}
-.btn-donate:hover { background-color: var(--primary-black); color: var(--primary-yellow); }
-
-.hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
-
-/* --- HERO SECTION --- */
-.hero-section {
-    background: url('assets/sakhi saheli flyer.jpeg') no-repeat center center/cover;
-    height: 600px;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3); /* Slight dark tint */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-text-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    max-width: 500px;
-    border-left: 10px solid var(--primary-yellow); /* Signature Yellow Border */
-}
-
-.hero-text-box h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 15px; }
-.highlight-text { color: #d6a206; }
-.hero-text-box p { font-size: 1.1rem; margin-bottom: 25px; }
-
-.btn-black {
-    background: var(--primary-black);
-    color: var(--white);
-    padding: 12px 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-}
-.btn-black:hover { background: var(--primary-yellow); color: var(--primary-black); }
-
-/* --- IMPACT STRIP --- */
-.impact-strip {
-    background-color: var(--primary-yellow);
-    padding: 30px 0;
-    color: var(--primary-black);
-}
-
-.impact-grid {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.stat-item { display: flex; flex-direction: column; }
-.count { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; line-height: 1; }
-.label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-top: 5px; }
-
-/* --- PROJECT CARDS --- */
-.section-padding { padding: 80px 0; }
-.section-title { font-size: 2.5rem; margin-bottom: 10px; }
-.section-sub { margin-bottom: 50px; font-size: 1.1rem; color: #666; }
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.project-card {
-    border: 1px solid #e0e0e0;
-    background: var(--white);
+.btn-nav {
+    border: 1px solid var(--primary-brown);
+    padding: 8px 20px;
+    border-radius: 30px;
     transition: 0.3s;
 }
+.btn-nav:hover { background: var(--primary-brown); color: var(--white) !important; }
 
-.project-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); }
-
-.card-image {
-    height: 220px;
-    position: relative;
-    overflow: hidden;
-}
-.card-image img, .img-placeholder { width: 100%; height: 100%; object-fit: cover; display: flex; align-items: center; justify-content: center; background: #eee; }
-
-.badge {
-    position: absolute;
-    top: 15px; left: 15px;
-    background: var(--primary-black);
+/* --- HERO SECTION (Page 1) --- */
+.hero-section {
+    /* Floral/Mandala accent implied by gradient and soft image */
+    background: linear-gradient(rgba(93, 64, 55, 0.4), rgba(93, 64, 55, 0.4)), url('assets/sakhi saheli flyer.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: var(--white);
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
-.card-body { padding: 25px; text-align: center; }
-.card-body h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.card-body p { font-size: 0.95rem; margin-bottom: 20px; color: #555; }
-
-.benefits-list { text-align: left; margin-bottom: 25px; font-size: 0.9rem; }
-.benefits-list li { margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px; }
-.benefits-list i { color: var(--primary-yellow); margin-right: 8px; }
-
-.btn-yellow {
-    display: block; width: 100%;
-    background: var(--primary-yellow);
-    color: var(--primary-black);
-    padding: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
 }
+.subtitle { font-size: 1.4rem; font-weight: 300; }
 
-.btn-outline {
-    display: block; width: 100%;
-    border: 2px solid var(--primary-black);
-    color: var(--primary-black);
-    padding: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.btn-outline:hover { background: var(--primary-black); color: var(--white); }
+/* --- SECTIONS --- */
+.bg-soft { background-color: var(--soft-beige); }
+.bg-muted-beige { background-color: var(--muted-beige); }
+.bg-white { background-color: var(--white); }
+.bg-dark-brown { background-color: #3e2723; }
 
-/* --- ABOUT --- */
-.bg-grey { background-color: var(--light-grey); }
+.section-title { font-size: 2.5rem; margin-bottom: 20px; }
+.section-sub { margin-bottom: 50px; font-size: 1.1rem; font-style: italic; }
+
+/* --- ESSENCE (Page 2) --- */
 .split-layout { display: flex; gap: 50px; align-items: center; }
-.text-block, .image-block { flex: 1; }
+.text-block, .image-collage { flex: 1; }
+.lead { font-size: 1.2rem; font-style: italic; color: var(--gold-accent); margin-bottom: 20px; }
 
-.trust-icons { margin-top: 20px; }
-.trust-icons img { height: 50px; margin-right: 15px; filter: grayscale(100%); opacity: 0.7; }
+.image-collage { position: relative; height: 300px; }
+.image-collage img { position: absolute; border: 5px solid var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 60%; }
+.collage-1 { top: 0; left: 0; z-index: 1; }
+.collage-2 { bottom: 0; right: 0; z-index: 2; }
 
-.framed-img {
-    width: 100%;
-    border: 10px solid var(--white);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* --- JOURNEY (Page 3) --- */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    position: relative;
+}
+.timeline::before {
+    content: ''; position: absolute; top: 30px; left: 0; width: 100%; height: 2px; background: var(--gold-accent); z-index: 0;
+}
+.timeline-item {
+    text-align: center;
+    background: var(--muted-beige);
+    padding: 0 10px;
+    z-index: 1;
+    flex: 1;
+}
+.icon {
+    width: 60px; height: 60px; background: var(--primary-brown); color: var(--gold-accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 15px; font-size: 1.5rem; border: 3px solid var(--white);
 }
 
-/* --- NEWSLETTER STRIP --- */
-.newsletter-strip {
-    background: var(--primary-yellow);
-    padding: 40px 0;
+/* --- MISSION (Page 5) --- */
+.mission-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+.mission-card {
+    padding: 30px; color: var(--white); border-radius: 8px; text-align: center;
 }
-.flex-strip { display: flex; justify-content: space-between; align-items: center; }
-.flex-strip h3 { font-size: 2rem; }
+.mission-card i { font-size: 2rem; margin-bottom: 15px; }
+.color-1 { background-color: #5d4037; }
+.color-2 { background-color: #8d6e63; }
+.color-3 { background-color: #d4af37; color: var(--text-dark); }
+.color-4 { background-color: #800000; }
+
+/* --- VALUES (Page 6) --- */
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.value-item { text-align: center; }
+.circle-icon {
+    width: 100px; height: 100px; background: var(--white); border: 2px solid var(--gold-accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 2.5rem; color: var(--primary-brown);
+}
+
+/* --- INITIATIVES (Scheme Layout) (Page 7) --- */
+.schemes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.scheme-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.scheme-card:hover { transform: translateY(-5px); border-color: var(--gold-accent); }
+.card-img {
+    width: 120px; height: 100%; min-height: 150px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; color: var(--primary-brown);
+}
+.card-body { padding: 20px; flex: 1; }
+.card-body h3 { font-size: 1.4rem; margin-bottom: 5px; }
+.tag { font-size: 0.8rem; text-transform: uppercase; color: var(--gold-accent); letter-spacing: 1px; font-weight: bold; }
+.card-body p { margin-top: 10px; font-size: 0.95rem; }
+
+/* --- IMPACT (Page 8) --- */
+.impact-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 40px;
+}
+.impact-photo {
+    height: 200px; background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.light { color: var(--white); }
+
+/* --- CONTACT (Page 9/10) --- */
+.bg-gold-gradient { background: var(--warm-gradient); }
+.join-grid { display: flex; justify-content: space-around; margin-bottom: 50px; }
+.join-item { text-align: center; }
+.join-item i { font-size: 2.5rem; color: var(--primary-brown); margin-bottom: 10px; }
+
+.contact-box {
+    background: var(--white);
+    padding: 40px;
+    border: 2px solid var(--gold-accent);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.emotion-line { font-family: 'Playfair Display'; font-style: italic; font-size: 1.2rem; margin-bottom: 40px; }
+.closing { margin-top: 20px; font-style: italic; color: #777; }
 
 /* --- FOOTER --- */
 footer {
-    background: var(--primary-black);
-    color: #bbb;
-    padding: 60px 0 20px;
+    background: var(--primary-brown);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
 }
 
-.footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
-.col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
-.col a { display: block; margin-bottom: 10px; color: #bbb; }
-.col a:hover { color: var(--primary-yellow); }
-
-.footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem; }
-
-/* --- RESPONSIVE --- */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav-menu { display: none; }
-    .hamburger { display: block; }
-    .hero-text-box { margin: 0 auto; text-align: center; }
-    .impact-grid { flex-direction: column; gap: 20px; }
-    .project-grid { grid-template-columns: 1fr; }
-    .split-layout { flex-direction: column; }
-    .flex-strip { flex-direction: column; gap: 20px; text-align: center; }
-    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .split-layout, .mission-grid, .values-grid, .schemes-grid, .impact-grid, .timeline {
+        flex-direction: column; grid-template-columns: 1fr;
+    }
+    .timeline::before { display: none; }
+    .nav-links { display: none; } /* Add JS hamburger for mobile */
 }
