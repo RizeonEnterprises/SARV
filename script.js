@@ -1,14 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Toggle
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('#nav-links');
+    const navMenu = document.querySelector('.nav-menu');
 
-    if(hamburger) {
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.width = '100%';
-            navLinks.style.paddingTop = '20px';
+            // Toggle mobile menu visibility
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                // Apply mobile styles dynamically
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px'; // Adjust based on your navbar height
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.background = '#ffffff';
+                navMenu.style.padding = '20px 0';
+                navMenu.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                navMenu.style.zIndex = '1000';
+                navMenu.style.textAlign = 'center';
+            }
         });
     }
 
@@ -16,9 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Close menu on click (mobile)
+                if (window.innerWidth <= 768 && navMenu) {
+                    navMenu.style.display = 'none';
+                }
+                
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
