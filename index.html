@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | SARV FOUNDATION</title>
+    <title>SARV FOUNDATION | Empowering Lives</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div class="social-links">
+                <span>Follow Us:</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-link">
+                <a href="mailto:sarv.team.foundation@gmail.com"><i class="fas fa-envelope"></i> sarv.team.foundation@gmail.com</a>
+                <span class="separator">|</span>
+                <a href="tel:+919654800900"><i class="fas fa-phone"></i> +91 9654800900</a>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar">
-        <div class="container nav-content">
+        <div class="container nav-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/logo final.jpeg" alt="Sarv Foundation Logo">
+                    <img src="assets/logo final.jpeg" alt="SARV Foundation">
                 </a>
                 <div class="logo-text">
                     <h2>SARV</h2>
@@ -22,180 +38,147 @@
                 </div>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="index.html#initiatives">Initiatives</a></li>
-                <li><a href="index.html#contact" class="btn-nav">Join Us</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html" >About Us</a></li>
+                <li><a href="#initiatives">Our Projects</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#partners">Partners</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div class="nav-actions">
+                <a href="#donate" class="btn btn-gold">Donate Now</a>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section" style="height: 40vh; background: linear-gradient(rgba(93, 64, 55, 0.7), rgba(93, 64, 55, 0.7)), url('assets/sakhi saheli flyer.jpeg') center/cover;">
+    <header class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="container hero-content text-center">
-            <h1 style="color: #fff;">About Sarv</h1>
-            <p style="color: #fdfbf7; font-size: 1.2rem;">One World | One Heart</p>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <h1>Empowering Lives. <br> <span class="highlight-text">Nurturing Humanity.</span></h1>
+                <p>A movement of compassion, dignity, and inclusive growth where no one is left behind.</p>
+                <a href="#initiatives" class="btn btn-brown">Join the Movement</a>
+            </div>
         </div>
     </header>
 
-    <section class="section-padding bg-warm">
+    <section class="impact-strip">
+        <div class="container impact-grid">
+            <div class="stat-item">
+                <span class="count">100+</span>
+                <span class="label">Families Supported</span>
+            </div>
+            <div class="stat-item">
+                <span class="count">4</span>
+                <span class="label">Key Initiatives</span>
+            </div>
+            <div class="stat-item">
+                <span class="count">12A/80G</span>
+                <span class="label">Certified NGO</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="initiatives" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Our Key Initiatives</h2>
+            <p class="section-sub text-center">Every initiative started with one simple intention: to touch a life with love.</p>
+
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <a href="#donate" class="card-img-link">
+                        <div class="card-image">
+                            <div class="img-placeholder" style="background-color: #e0d4c3;">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <div class="badge">Education</div>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h3>Sarv Shikha</h3>
+                        <h4>Adopt Her Dream</h4>
+                        <p>Sponsor a girl's education for one year. Includes transparent updates and a handwritten note from the child.</p>
+                        <a href="#donate" class="btn btn-outline">Sponsor Now</a>
+                    </div>
+                </div>
+
+                <div class="project-card featured-card">
+                    <a href="#donate" class="card-img-link">
+                        <div class="card-image">
+                            <img src="assets/sakhi saheli flyer.jpeg" alt="Sakhi Saheli">
+                            <div class="badge">Health</div>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h3>Sakhi Saheli</h3>
+                        <h4>Menstrual Dignity</h4>
+                        <p>Providing hygiene kits and awareness sessions to adolescent girls in Delhi NCR.</p>
+                        <a href="#donate" class="btn btn-gold">Donate a Kit (₹250)</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="#donate" class="card-img-link">
+                        <div class="card-image">
+                            <div class="img-placeholder" style="background-color: #dcc8b6;">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="badge">Nutrition</div>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h3>Poshan Saathi</h3>
+                        <h4>Hunger Relief</h4>
+                        <p>Supporting women workers and families with nutritious dry ration kits delivered with dignity.</p>
+                        <a href="#donate" class="btn btn-outline">Feed a Family</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-beige">
         <div class="container split-layout">
             <div class="text-block">
-                <h2 class="section-title">Who We Are</h2>
-                <p class="lead-text">Sarv is a Delhi NCR–registered foundation working towards community welfare, with a focus on women, children, and vulnerable communities.</p>
-                
-                <div class="compliance-box" style="margin-top: 30px; background: #fff; padding: 25px; border-left: 5px solid var(--gold-accent); border-radius: 4px;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-brown);">Legal & Compliance</h3>
-                    <ul class="cert-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none;">
-                        <li><i class="fas fa-check-circle" style="color: var(--gold-accent);"></i> 12A Registered</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold-accent);"></i> 80G Certified</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold-accent);"></i> DARPAN Registered</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold-accent);"></i> CSR-Compliant</li>
-                    </ul>
+                <h2 class="section-title">Our Essence</h2>
+                <p class="lead-text">"Sarv" means all, complete, whole—a vision where no one is invisible.</p>
+                <p>Founded by Aamna Singh, Sarv stands on decades of on-ground experience. Our story began in modest community kitchens and evolved through trust and love.</p>
+                <div class="trust-icons">
+                    <img src="assets/niti ayog logo.jpg.jpeg" alt="Niti Aayog">
+                    <img src="assets/mission shakti logo.jpg.jpeg" alt="Mission Shakti">
                 </div>
             </div>
             <div class="image-block">
-                <img src="assets/csr logo.jpg.jpeg" alt="CSR Compliance" class="framed-img" style="width: 100%; border: 8px solid #fff; box-shadow: 10px 10px 0 var(--gold-accent);">
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding bg-white">
-        <div class="container">
-            <h2 class="section-title text-center">Promoter’s Prior Experience</h2>
-            <p class="section-sub text-center" style="max-width: 800px; margin: 0 auto 40px auto;">The founder of Sarv brings hands-on experience in executing community and women-centric initiatives.</p>
-            
-            <div class="project-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="project-card" style="padding: 25px; border: 1px solid #eee; background: #faf7f2;">
-                    <h3 style="font-size: 1.1rem; color: var(--primary-brown);">Sherise × Govt. of UP</h3>
-                    <span style="background: var(--gold-accent); color: white; padding: 2px 10px; font-size: 0.7rem; border-radius: 20px;">Mission Shakti</span>
-                    <p style="margin-top: 15px; font-size: 0.9rem;">Outreach programmes under <strong>Atmanirbhar Bharat</strong>, focusing on women empowerment, workplace dignity, and nutrition awareness.</p>
-                </div>
-                <div class="project-card" style="padding: 25px; border: 1px solid #eee; background: #faf7f2;">
-                    <h3 style="font-size: 1.1rem; color: var(--primary-brown);">Collaboration with IBHAS</h3>
-                    <span style="background: var(--gold-accent); color: white; padding: 2px 10px; font-size: 0.7rem; border-radius: 20px;">Gender Equality</span>
-                    <p style="margin-top: 15px; font-size: 0.9rem;">Programmes centred on emotional well-being, dignity, and inclusion for vulnerable communities.</p>
-                </div>
-                <div class="project-card" style="padding: 25px; border: 1px solid #eee; background: #faf7f2;">
-                    <h3 style="font-size: 1.1rem; color: var(--primary-brown);">WCD Engagements</h3>
-                    <span style="background: var(--gold-accent); color: white; padding: 2px 10px; font-size: 0.7rem; border-radius: 20px;">Inclusion</span>
-                    <p style="margin-top: 15px; font-size: 0.9rem;">Initiatives on women empowerment, gender inclusion, and equality with Women & Child Development Departments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding bg-warm" style="background-color: #fcfbf9;">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 50px;">
-                <span style="color: var(--gold-accent); font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Current Pilot Initiative</span>
-                <h2 class="section-title">Poshan Saathi Food Drive</h2>
-                <p class="lead-text" style="font-size: 1.1rem; max-width: 800px; margin: 20px auto; font-style: italic;">
-                    “Poshan Saathi is a focused CSR pilot supporting women workers in industrial areas through essential nutrition kits.”
-                </p>
-            </div>
-
-            <div class="split-layout" style="align-items: flex-start; margin-bottom: 40px;">
-                <div class="text-block">
-                    <h3 style="color: var(--primary-brown); margin-bottom: 15px;">Project Background & Need</h3>
-                    <p>Rising costs and economic vulnerability have impacted access to basic nutrition for underprivileged families in Faridabad, particularly women-led households and daily-wage earners.</p>
-                    <p>This pilot food drive aims to support such families through <strong>nutritious dry ration kits</strong>, delivered with dignity and care.</p>
-                    
-                    <h4 style="margin-top: 20px; color: var(--gold-accent);">Project Objectives</h4>
-                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--primary-brown); margin-right: 8px;"></i> Support <strong>100 underprivileged families</strong> in Delhi/NCR.</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--primary-brown); margin-right: 8px;"></i> Contribute to hunger relief & women welfare.</li>
-                        <li><i class="fas fa-check" style="color: var(--primary-brown); margin-right: 8px;"></i> Execute a transparent, CSR-compliant pilot.</li>
-                    </ul>
-                </div>
-                
-                <div class="text-block" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary-brown); border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Project Details</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
-                        <li><strong>Location:</strong> Faridabad (Delhi NCR)</li>
-                        <li><strong>Beneficiaries:</strong> Women & Children</li>
-                        <li><strong>Coverage:</strong> 100 Families</li>
-                        <li><strong>Mode:</strong> Dry Ration Distribution</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div class="project-card" style="background: #fff; padding: 30px; border-radius: 8px;">
-                    <h4 style="color: var(--primary-brown); margin-bottom: 15px;"><i class="fas fa-shopping-basket"></i> Food Kit Contents</h4>
-                    <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <li><i class="fas fa-circle" style="font-size: 6px; color: var(--gold-accent); vertical-align: middle;"></i> Rice / Atta</li>
-                        <li><i class="fas fa-circle" style="font-size: 6px; color: var(--gold-accent); vertical-align: middle;"></i> Dal / Pulses</li>
-                        <li><i class="fas fa-circle" style="font-size: 6px; color: var(--gold-accent); vertical-align: middle;"></i> Cooking Oil</li>
-                        <li><i class="fas fa-circle" style="font-size: 6px; color: var(--gold-accent); vertical-align: middle;"></i> Salt & Essentials</li>
-                        <li><i class="fas fa-circle" style="font-size: 6px; color: var(--gold-accent); vertical-align: middle;"></i> Nutrition Biscuits</li>
-                    </ul>
-                </div>
-
-                <div class="project-card" style="background: var(--primary-brown); padding: 30px; border-radius: 8px; color: white;">
-                    <h4 style="color: var(--gold-accent); margin-bottom: 15px;"><i class="fas fa-coins"></i> Budget Summary</h4>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">
-                        <span>Cost per Family</span>
-                        <strong>₹1,000</strong>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-size: 1.2rem;">
-                        <span>Total Project Cost</span>
-                        <strong style="color: var(--gold-accent);">₹1,00,000</strong>
-                    </div>
-                    <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">*Flexible based on CSR partner preference</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding bg-white">
-        <div class="container">
-            <div class="split-layout">
-                <div class="text-block">
-                    <h2 class="section-title">CSR Alignment</h2>
-                    <p style="margin-bottom: 20px;">Aligned with <strong>Schedule VII</strong> of the Companies Act:</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <span style="background: #fdfbf7; padding: 10px 20px; border: 1px solid var(--gold-accent); border-radius: 20px; color: var(--primary-brown); font-weight: bold;">Hunger Relief</span>
-                        <span style="background: #fdfbf7; padding: 10px 20px; border: 1px solid var(--gold-accent); border-radius: 20px; color: var(--primary-brown); font-weight: bold;">Women & Child Welfare</span>
-                        <span style="background: #fdfbf7; padding: 10px 20px; border: 1px solid var(--gold-accent); border-radius: 20px; color: var(--primary-brown); font-weight: bold;">Community Dev</span>
-                    </div>
-                </div>
-
-                <div class="text-block">
-                    <h2 class="section-title">Monitoring & Reporting</h2>
-                    <p>We ensure complete transparency by providing:</p>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: var(--gold-accent); margin-right: 10px;"></i> Photographic documentation</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: var(--gold-accent); margin-right: 10px;"></i> Beneficiary details & Utilisation certificate</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: var(--gold-accent); margin-right: 10px;"></i> Impact summary report</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--gold-accent); margin-right: 10px;"></i> Formal acknowledgement to CSR partner</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding bg-warm" style="text-align: center;">
-        <div class="container" style="max-width: 700px;">
-            <div class="contact-box" style="background: #fff; padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--gold-accent);">
-                <h2 class="section-title">CSR Support Requested</h2>
-                <p class="lead-text">CSR funding support of <strong>₹1,00,000</strong> or <strong>in-kind contribution</strong> for execution of this pilot food drive.</p>
-                
-                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
-                
-                <h3 style="margin-bottom: 15px; color: var(--primary-brown);">Contact Us</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 5px;"><strong>Aamna Singh</strong> (Managing Trustee)</p>
-                <p style="font-size: 1.1rem; margin-bottom: 5px;"><i class="fas fa-phone-alt" style="color: var(--gold-accent); margin-right: 8px;"></i> +91 9654800900</p>
-                <p style="font-size: 1.1rem;"><i class="fas fa-envelope" style="color: var(--gold-accent); margin-right: 8px;"></i> sarv.team.foundation@gmail.com</p>
+                <a href="#about">
+                    <img src="assets/img.png" alt="Aamna Singh" class="framed-img">
+                </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container text-center" style="padding: 30px 0; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+        <div class="container footer-content">
+            <div class="col">
+                <h4>SARV Foundation</h4>
+                <p>One World | One Heart</p>
+                <p>Registered Address: Delhi NCR</p>
+            </div>
+            <div class="col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="#initiatives">Our Initiatives</a>
+                <a href="#impact">CSR Partners</a>
+            </div>
+            <div class="col">
+                <h4>Contact</h4>
+                <p>+91 9654800900</p>
+                <p>sarv.team.foundation@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>"Sarv is not just an initiative. Sarv is humanity... woven together in love."</p>
             <p>&copy; 2026 SARV Foundation. All Rights Reserved.</p>
         </div>
     </footer>
