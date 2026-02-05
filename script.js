@@ -44,3 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const menuRow = document.querySelector('.menu-row');
+
+    if (hamburger && menuRow) {
+        hamburger.addEventListener('click', () => {
+            menuRow.classList.toggle('active');
+        });
+    }
+    
+    // Optional: Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 1200) {
+                menuRow.classList.remove('active');
+            }
+        });
+    });
+});
