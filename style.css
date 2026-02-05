@@ -1682,3 +1682,8 @@ footer {
     .dropdown:hover .dropdown-content { display: block; }
 }
 
+/* Add this to style.css */
+.pastel-purple {
+    background-color: #f3e5f5; /* Soft Lavender */
+    border-bottom: 4px solid #ce93d8;
+}
