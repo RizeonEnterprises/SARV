@@ -485,3 +485,109 @@ footer {
     .img-2 { width: 160px; height: 200px; }
     .img-3 { width: 140px; height: 110px; top: 35%; left: 15%; }
 }
+/* --- JOURNEY PAGE STYLES --- */
+
+/* Muted Beige Background & Faded Image */
+.journey-bg {
+    background-color: #f5f0e6; /* Muted Beige */
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Faded background image of community/women */
+    background: url('assets/sakhi saheli flyer.jpeg') center/cover;
+    opacity: 0.08; /* Very subtle fade (8%) */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2; /* Ensures content sits above the faded image */
+}
+
+/* Horizontal Timeline */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+/* The Connecting Line */
+.timeline-line {
+    position: absolute;
+    top: 40px; /* Aligns with center of icons */
+    left: 50px;
+    right: 50px;
+    height: 3px;
+    background: var(--gold-accent);
+    z-index: 0;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border: 3px solid var(--gold-accent);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-brown);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.1);
+    transition: transform 0.3s;
+}
+
+.timeline-step:hover .timeline-icon {
+    transform: scale(1.1);
+    background: var(--gold-accent);
+    color: #fff;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: var(--primary-brown);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive Timeline (Stack vertically on mobile) */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .timeline-line {
+        width: 3px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline-step {
+        width: 100%;
+    }
+}
