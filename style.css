@@ -649,4 +649,239 @@ footer {
         font-size: 1.1rem;
     }
 }
+/* --- INDEX COVER PAGE STYLES --- */
 
+/* Hero Section Base */
+.cover-hero {
+    position: relative;
+    height: 85vh; /* Full screen feel */
+    background: url('assets/sakhi saheli flyer.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Soft Beige & Gold Gradient Overlay */
+.hero-overlay-gradient {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Gradient: Warm Brown/Beige to Soft Gold */
+    background: linear-gradient(135deg, rgba(93, 64, 55, 0.85) 0%, rgba(212, 175, 55, 0.4) 100%);
+    z-index: 1;
+}
+
+/* Subtle Mandala Pattern Effect */
+.mandala-pattern {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 2;
+    opacity: 0.1; /* Subtle */
+    /* CSS Radial Gradient simulating a floral/mandala pattern */
+    background-image: 
+        radial-gradient(circle at center, transparent 0%, transparent 20%, #fff 21%, #fff 22%, transparent 23%),
+        radial-gradient(circle at center, transparent 0%, transparent 30%, #fff 31%, #fff 32%, transparent 33%);
+    background-size: 100px 100px;
+}
+
+/* Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fff; /* White contrasts best with the warm overlay */
+    text-shadow: 2px 2px 10px rgba(62, 39, 35, 0.5);
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fdfbf7; /* Soft Beige */
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    color: #fdfbf7;
+    font-weight: 300;
+    letter-spacing: 1px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Decorative Divider */
+.divider-gold-center {
+    width: 100px;
+    height: 3px;
+    background-color: var(--gold-accent);
+    margin: 20px auto;
+}
+
+/* Hero Buttons */
+.btn-hero {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-hero.primary {
+    background-color: var(--gold-accent);
+    color: var(--primary-brown);
+}
+.btn-hero.primary:hover {
+    background-color: #fff;
+}
+
+.btn-hero.secondary {
+    border: 2px solid #fff;
+    color: #fff;
+}
+.btn-hero.secondary:hover {
+    background-color: #fff;
+    color: var(--primary-brown);
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+    .main-title { font-size: 3rem; }
+    .sub-title { font-size: 1.5rem; }
+}
+/* --- INITIATIVES PAGE STYLES --- */
+
+/* Grid Layout (2x2) */
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Base Card Style */
+.initiative-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.initiative-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(93, 64, 55, 0.1);
+}
+
+/* Image Box */
+.card-image-box {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.initiative-card:hover .card-image-box img {
+    transform: scale(1.05);
+}
+
+/* Content Area */
+.card-content {
+    padding: 35px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--primary-brown);
+    margin-bottom: 5px;
+}
+
+.card-content .subtitle {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    opacity: 0.7;
+    color: var(--primary-brown);
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #4e342e;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Button Link */
+.btn-link {
+    margin-top: auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--primary-brown);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.3s;
+}
+
+.btn-link:hover {
+    gap: 10px;
+    text-decoration: none;
+}
+
+/* --- SOFT PASTEL BACKGROUNDS --- */
+
+.pastel-pink {
+    background-color: #fdf2f5; /* Soft Pink */
+    border-bottom: 4px solid #f8bbd0;
+}
+
+.pastel-green {
+    background-color: #f1f8e9; /* Soft Green */
+    border-bottom: 4px solid #c8e6c9;
+}
+
+.pastel-blue {
+    background-color: #f3f9fe; /* Soft Blue */
+    border-bottom: 4px solid #bbdefb;
+}
+
+.pastel-orange {
+    background-color: #fff8f0; /* Soft Orange/Cream */
+    border-bottom: 4px solid #ffe0b2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+    }
+}
