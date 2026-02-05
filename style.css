@@ -411,3 +411,77 @@ footer {
     color: var(--primary-brown);
     text-decoration: underline;
 }
+/* --- OUR ESSENCE COLLAGE STYLES --- */
+
+.collage-container {
+    position: relative;
+    height: 450px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.collage-item {
+    position: absolute;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, z-index 0.3s;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.collage-item:hover {
+    transform: scale(1.05);
+    z-index: 10 !important;
+}
+
+/* Positioning the 3 Images */
+
+/* Image 1: Top Left (Large) */
+.img-1 {
+    width: 240px;
+    height: 180px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(-5deg);
+}
+
+/* Image 2: Bottom Right (Large) */
+.img-2 {
+    width: 220px;
+    height: 260px;
+    bottom: 20px;
+    right: 0;
+    z-index: 2;
+    transform: rotate(3deg);
+}
+
+/* Image 3: Center Overlay (Small) */
+.img-3 {
+    width: 180px;
+    height: 140px;
+    top: 40%;
+    left: 20%;
+    z-index: 3;
+    transform: rotate(8deg);
+    border-color: var(--gold-accent); /* Highlight borders */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .collage-container {
+        height: 350px;
+        margin-top: 40px;
+    }
+    .img-1 { width: 180px; height: 140px; }
+    .img-2 { width: 160px; height: 200px; }
+    .img-3 { width: 140px; height: 110px; top: 35%; left: 15%; }
+}
