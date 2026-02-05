@@ -1271,3 +1271,269 @@ footer {
         outline-offset: 5px;
     }
 }
+/* --- NAVIGATION STYLES --- */
+.navbar {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-top: 4px solid var(--gold-accent); /* Optional Gold Top Border */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%; /* Increased width to fit all items */
+    max-width: 1400px; /* Allow wider layout */
+    margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo img { 
+    height: 55px; 
+}
+.logo-text h2 { 
+    margin: 0; 
+    font-size: 1.8rem; 
+    line-height: 1; 
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-brown);
+}
+.logo-text span { 
+    font-size: 0.7rem; 
+    letter-spacing: 1.5px; 
+    color: var(--gold-accent); 
+    text-transform: uppercase; 
+    display: block;
+    margin-top: 3px;
+}
+
+/* Menu Links Styling */
+.nav-menu { 
+    display: flex; 
+    gap: 20px; /* Reduced gap to fit all items */
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* Bold text */
+    font-size: 0.75rem; /* Slightly smaller font to fit 12 items */
+    text-transform: uppercase; /* Makes text CAPITAL like screenshot */
+    color: var(--primary-brown);
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Hover & Active State */
+.nav-menu a:hover, 
+.nav-menu a.active { 
+    color: var(--gold-accent); 
+    border-bottom-color: var(--gold-accent);
+}
+
+/* Mobile Hamburger */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary-brown);
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE DESIGN (For smaller screens) --- */
+@media (max-width: 1250px) {
+    /* Hide menu and show hamburger on laptops/tablets/phones */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Script.js will toggle this class */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu a {
+        font-size: 1rem; /* Larger font on mobile menu */
+        display: block;
+        padding: 10px;
+    }
+}
+/* --- TWO-ROW NAVIGATION STYLES --- */
+.navbar {
+    background: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-top: 4px solid var(--gold-accent);
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks rows vertically */
+    gap: 15px; /* Space between Logo row and Menu row */
+}
+
+/* --- ROW 1: BRANDING --- */
+.brand-row {
+    display: flex;
+    justify-content: space-between; /* Keeps logo left, hamburger right (on mobile) */
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Optional subtle divider */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-link img { 
+    height: 60px; /* Slightly larger logo */
+}
+
+.logo-text h2 { 
+    margin: 0; 
+    font-size: 2rem; 
+    line-height: 1; 
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-brown);
+    letter-spacing: 0.5px;
+}
+
+.logo-text span { 
+    font-size: 0.75rem; 
+    letter-spacing: 2px; 
+    color: var(--gold-accent); 
+    text-transform: uppercase; 
+    display: block;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* --- ROW 2: MENU --- */
+.menu-row {
+    width: 100%;
+}
+
+.nav-menu { 
+    display: flex; 
+    justify-content: space-between; /* Spreads items evenly across the line */
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Forces single line */
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem; /* Adjusted for 12 items */
+    text-transform: uppercase;
+    color: var(--primary-brown);
+    letter-spacing: 0.5px;
+    padding: 5px 0;
+    position: relative;
+    white-space: nowrap; /* Prevents text breaking */
+}
+
+/* Hover Effect: Gold Underline */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--gold-accent);
+    transition: width 0.3s;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active { 
+    color: var(--gold-accent); 
+}
+
+/* Mobile Hamburger */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary-brown);
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1200px) {
+    /* On smaller screens, hide the 2nd row and use hamburger menu */
+    .menu-row {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+    
+    .menu-row.active {
+        display: block; /* Show when active */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .brand-row {
+        border-bottom: none; /* Remove divider on mobile */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+        display: block;
+        padding: 10px;
+    }
+}
