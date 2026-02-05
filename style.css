@@ -1537,3 +1537,148 @@ footer {
         padding: 10px;
     }
 }
+/* --- TWO-ROW NAVIGATION WITH DROPDOWN --- */
+.navbar {
+    background: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-top: 4px solid var(--gold-accent);
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- ROW 1: LOGO --- */
+.brand-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.logo-link img { height: 60px; }
+.logo-text h2 { 
+    margin: 0; font-size: 2rem; line-height: 1; font-family: 'Playfair Display', serif; color: var(--primary-brown);
+}
+.logo-text span { 
+    font-size: 0.75rem; letter-spacing: 2px; color: var(--gold-accent); display: block; margin-top: 4px; font-weight: 600;
+}
+
+/* --- ROW 2: MENU --- */
+.menu-row { width: 100%; }
+
+.nav-menu { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 0; padding: 0;
+}
+
+.nav-menu li { 
+    list-style: none; 
+    position: relative; /* Needed for dropdown positioning */
+}
+
+/* Main Links Style */
+.nav-menu a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem; 
+    text-transform: uppercase;
+    color: var(--primary-brown);
+    letter-spacing: 0.5px;
+    padding: 10px 5px;
+    display: block;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover, .nav-menu a.active { color: var(--gold-accent); }
+
+/* --- DROPDOWN STYLES --- */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1001;
+    top: 100%; /* Appears directly below parent */
+    left: 0;
+    padding: 10px 0;
+    border-top: 3px solid var(--gold-accent);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    color: #555;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.dropdown-content li a:hover {
+    background-color: #faf7f2; /* Soft beige hover */
+    color: var(--primary-brown);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary-brown);
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .menu-row {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .menu-row.active { display: block; }
+
+    .nav-menu { flex-direction: column; align-items: flex-start; }
+    .nav-menu li { width: 100%; border-bottom: 1px solid #eee; }
+    .nav-menu a { padding: 15px 20px; }
+    
+    .hamburger { display: block; }
+
+    /* Mobile Dropdown Behavior */
+    .dropdown-content {
+        position: static; /* Stack naturally on mobile */
+        display: none; /* Hidden until hovered/clicked */
+        box-shadow: none;
+        border-top: none;
+        background-color: #f9f9f9; /* Slight contrast for sub-menu */
+        padding-left: 20px;
+    }
+    
+    /* Make dropdown visible on hover (or click simulation) on mobile */
+    .dropdown:hover .dropdown-content { display: block; }
+}
+
