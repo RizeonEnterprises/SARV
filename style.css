@@ -885,3 +885,389 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* --- IMPACT IN MOTION STYLES --- */
+
+.impact-gallery-section {
+    position: relative;
+    padding: 20px;
+    background-color: var(--soft-beige);
+    min-height: 100vh;
+}
+
+/* Title Overlay in Warm White */
+.impact-overlay-title {
+    text-align: center;
+    padding: 60px 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.impact-overlay-title h1 {
+    font-size: 4rem;
+    color: var(--primary-brown);
+    text-shadow: 2px 2px 0px #fff; /* "Warm White" effect outline */
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.gold-divider {
+    width: 100px;
+    height: 4px;
+    background: var(--gold-accent);
+    margin: 0 auto;
+}
+
+/* CSS Grid (Masonry Style) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense; /* Fills gaps */
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Grid Spans for Variety */
+.large { grid-column: span 2; grid-row: span 2; }
+.wide { grid-column: span 2; }
+.tall { grid-row: span 2; }
+
+/* Quote Box Styling */
+.quote-box {
+    background: var(--primary-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.quote-content i {
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin-bottom: 15px;
+}
+
+.quote-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #fff; /* Warm White text */
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Hover Caption Effect */
+.hover-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(62, 39, 35, 0.9));
+    color: #fff;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .hover-caption {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .impact-overlay-title h1 { font-size: 2.5rem; }
+    .gallery-grid { display: flex; flex-direction: column; }
+    .gallery-item { height: 300px; }
+}
+/* --- OUR VALUES PAGE STYLES --- */
+
+/* Grid Layout */
+.values-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Card Styling */
+.value-card-large {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(93, 64, 55, 0.05);
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.value-card-large:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--gold-accent);
+}
+
+.value-card-large h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-brown);
+    margin: 20px 0 15px;
+}
+
+.value-card-large p {
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Large Circular Icons */
+.icon-circle-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Earth Tone Palette */
+.earth-1 { background-color: #8D6E63; } /* Warm Terra Cotta */
+.earth-2 { background-color: #BCAAA4; } /* Soft Taupe */
+.earth-3 { background-color: #5D4037; } /* Deep Brown */
+.earth-4 { background-color: #D7CCC8; color: var(--primary-brown); } /* Light Beige */
+
+/* Small Divider inside cards */
+.divider-small {
+    width: 40px;
+    height: 2px;
+    background-color: var(--gold-accent);
+    margin: 0 auto 15px;
+}
+/* --- OUR MISSION PAGE STYLES --- */
+
+/* Side-by-Side Blocks Grid */
+.mission-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Side-by-side */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Base Block Style */
+.mission-block {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    color: white; /* Default text color for dark blocks */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.mission-block:hover {
+    transform: translateY(-5px);
+}
+
+.mission-icon {
+    font-size: 3rem;
+    margin-right: 25px;
+    opacity: 0.9;
+    flex-shrink: 0;
+}
+
+.mission-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: inherit; /* Inherits from parent block color */
+}
+
+.mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* --- COLOR SHADES --- */
+
+/* Gold Block */
+.gold-block {
+    background-color: #d4af37; /* Var Gold */
+    background: linear-gradient(135deg, #d4af37 0%, #c5a059 100%);
+}
+
+/* Maroon Block (New Addition) */
+.maroon-block {
+    background-color: #800000; /* Rich Maroon */
+    background: linear-gradient(135deg, #800000 0%, #5c0000 100%);
+}
+
+/* Brown Block */
+.brown-block {
+    background-color: #5d4037; /* Var Brown */
+    background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%);
+}
+
+/* Light Block (Contrast) */
+.light-block {
+    background-color: #fff8e1; /* Very light gold/beige */
+    color: #5d4037; /* Brown text for contrast */
+    border: 2px solid #d4af37;
+}
+.light-block .mission-icon {
+    color: #800000; /* Maroon icon accent */
+}
+
+/* Responsive: Stack on Mobile */
+@media (max-width: 768px) {
+    .mission-grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .mission-block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mission-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+/* --- CONTACT PAGE STYLES --- */
+
+/* Full Screen Section with Faded Background */
+.contact-page-section {
+    position: relative;
+    min-height: 85vh; /* Takes up most of the screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--soft-beige);
+    overflow: hidden;
+}
+
+/* The Faded Background Image (10% Opacity) */
+.contact-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('assets/sakhi saheli flyer.jpeg') center/cover no-repeat;
+    opacity: 0.1; /* 10% Opacity as requested */
+    z-index: 0;
+    pointer-events: none; /* Allows clicking through */
+}
+
+/* Elegant Box Container */
+.contact-elegant-box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    padding: 60px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid var(--gold-accent); /* Soft Gold Border */
+    box-shadow: 0 15px 40px rgba(93, 64, 55, 0.08);
+    /* Double Border Effect using outline */
+    outline: 1px solid var(--gold-accent);
+    outline-offset: 10px; 
+}
+
+/* Typography */
+.contact-info-block {
+    margin: 40px 0;
+    font-size: 1.2rem;
+    color: var(--primary-brown);
+}
+
+.address-text {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contact-links p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-links i {
+    color: var(--gold-accent);
+}
+
+/* Social Icons */
+.social-follow {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.social-icons-large {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons-large a {
+    width: 50px;
+    height: 50px;
+    background-color: var(--soft-beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-brown);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gold-accent);
+}
+
+.social-icons-large a:hover {
+    background-color: var(--gold-accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Closing Line */
+.closing-line {
+    margin-top: 50px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-elegant-box {
+        padding: 40px 20px;
+        width: 90%;
+        outline-offset: 5px;
+    }
+}
