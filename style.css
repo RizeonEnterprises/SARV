@@ -591,3 +591,62 @@ footer {
         width: 100%;
     }
 }
+/* --- VISION PAGE STYLES --- */
+
+.vision-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Vision Statement Card */
+.vision-card {
+    background: #fff;
+    padding: 60px 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(93, 64, 55, 0.08); /* Soft shadow */
+    border-top: 6px solid var(--gold-accent);
+}
+
+.vision-statement {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--primary-brown);
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Gold Divider Line */
+.divider-gold {
+    height: 3px;
+    width: 80px;
+    background-color: var(--gold-accent);
+    margin: 50px auto;
+}
+
+/* Subtext Styling */
+.vision-subtext p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.vision-subtext p:last-child {
+    font-weight: 600;
+    color: var(--primary-brown);
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+    .vision-statement {
+        font-size: 1.4rem;
+    }
+    .vision-subtext p {
+        font-size: 1.1rem;
+    }
+}
+
