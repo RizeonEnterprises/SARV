@@ -486,52 +486,201 @@ ul { list-style: none; }
 /* =========================================
    15. MODERN CONTACT PAGE
    ================================********* */
+/* --- MODERN CONTACT PAGE STYLES --- */
+
+/* Section Background */
 .contact-modern-section {
-    position: relative; padding: 60px 0; min-height: 100vh; background-color: #fffaf4; display: flex; align-items: center; justify-content: center;
-}
-.contact-bg-blur {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/sakhi saheli flyer.jpeg') center/cover no-repeat; opacity: 0.15; filter: blur(8px); z-index: 0;
-}
-.contact-card-wrapper {
-    background: #fff; border-radius: 15px; box-shadow: 0 20px 60px rgba(93, 64, 55, 0.15); display: grid; grid-template-columns: 1fr 1.4fr; overflow: hidden; position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;
+    position: relative;
+    padding: 60px 0;
+    min-height: 100vh;
+    background-color: #fffaf4; /* Very light warm bg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Info Panel */
-.contact-info-panel { background-color: #fdfbf7; padding: 50px; border-right: 1px solid #f0eadd; display: flex; flex-direction: column; }
-.panel-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-brown); margin-bottom: 20px; }
-.panel-desc { font-size: 0.95rem; color: #666; margin-bottom: 30px; line-height: 1.6; }
-.info-item { display: flex; align-items: flex-start; margin-bottom: 25px; gap: 15px; }
-.icon-box {
-    width: 40px; height: 40px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-accent); box-shadow: 0 4px 10px rgba(0,0,0,0.05); flex-shrink: 0;
+.contact-bg-blur {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('assets/sakhi saheli flyer.jpeg') center/cover no-repeat;
+    opacity: 0.15;
+    filter: blur(8px); /* Blur effect to hide text in bg image */
+    z-index: 0;
 }
-.info-item strong { display: block; color: var(--primary-brown); font-size: 1rem; margin-bottom: 3px; }
-.info-item p { font-size: 0.95rem; color: #555; margin: 0; }
+
+.mb-40 { margin-bottom: 40px; }
+
+/* The Split Card Wrapper */
+.contact-card-wrapper {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(93, 64, 55, 0.15); /* Soft deep shadow */
+    display: grid;
+    grid-template-columns: 1fr 1.4fr; /* Info smaller, Form wider */
+    overflow: hidden; /* Ensures corners stay rounded */
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- LEFT PANEL: INFO --- */
+.contact-info-panel {
+    background-color: #fdfbf7; /* Soft Beige */
+    padding: 50px;
+    border-right: 1px solid #f0eadd;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-brown);
+    margin-bottom: 20px;
+}
+
+.panel-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--primary-brown);
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
 .info-spacer { flex-grow: 1; min-height: 20px; }
 
-/* Form Panel */
-.contact-form-panel { background-color: #fff; padding: 50px; }
-.sarv-form-modern { display: flex; flex-direction: column; gap: 20px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.form-group label {
-    display: block; font-size: 0.85rem; font-weight: 700; color: var(--primary-brown); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.sarv-form-modern input, .sarv-form-modern select, .sarv-form-modern textarea {
-    width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 6px; font-family: 'Lato', sans-serif; font-size: 0.95rem; background: #fcfcfc; transition: all 0.3s;
-}
-.sarv-form-modern input:focus, .sarv-form-modern textarea:focus {
-    border-color: var(--gold-accent); background: #fff; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); outline: none;
-}
-.privacy-text { font-size: 0.8rem; color: #999; margin-top: -5px; }
-.btn-submit-modern {
-    background-color: var(--primary-brown); color: #fff; padding: 15px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; margin-top: 10px;
-}
-.btn-submit-modern:hover {
-    background-color: var(--gold-accent); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-.response-badge {
-    margin-top: 25px; padding: 10px; background: #f1f8e9; color: #558b2f; font-size: 0.85rem; border-radius: 4px; text-align: center; font-weight: 600;
+/* --- RIGHT PANEL: FORM --- */
+.contact-form-panel {
+    background-color: #fff;
+    padding: 50px;
 }
 
+.sarv-form-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-brown);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sarv-form-modern input,
+.sarv-form-modern select,
+.sarv-form-modern textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    background: #fcfcfc;
+    transition: all 0.3s;
+}
+
+.sarv-form-modern input:focus,
+.sarv-form-modern textarea:focus {
+    border-color: var(--gold-accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    outline: none;
+}
+
+.privacy-text {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: -5px;
+}
+
+.btn-submit-modern {
+    background-color: var(--primary-brown);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit-modern:hover {
+    background-color: var(--gold-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.response-badge {
+    margin-top: 25px;
+    padding: 10px;
+    background: #f1f8e9;
+    color: #558b2f;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 900px) {
+    .contact-card-wrapper {
+        grid-template-columns: 1fr; /* Stack vertically */
+    }
+    .contact-info-panel, .contact-form-panel {
+        padding: 30px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
 /* =========================================
    16. FOOTER
    ================================********* */
@@ -583,3 +732,4 @@ footer {
     .timeline-line { width: 3px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
     .timeline-step { width: 100%; }
 }
+
