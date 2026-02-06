@@ -12,7 +12,6 @@
 
     <nav class="navbar">
         <div class="container nav-wrapper">
-            
             <div class="brand-row">
                 <a href="index.html" class="logo-link">
                     <img src="assets/logo final.jpeg" alt="Sarv Foundation Logo">
@@ -27,9 +26,8 @@
             </div>
 
             <div class="menu-row">
-                <ul class="nav-menu">
+                <ul id="nav-links" class="nav-menu">
                     <li><a href="index.html">HOME</a></li>
-                    
                     <li class="dropdown">
                         <a href="about.html" class="dropbtn">ABOUT US <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-content">
@@ -40,19 +38,17 @@
                             <li><a href="values.html">OUR VALUES</a></li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
-                    <a href="initiatives.html" class="dropbtn">INITIATIVES <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="sakhi-saheli.html">SAKHI SAHELI</a></li>
+                        <a href="initiatives.html" class="dropbtn">INITIATIVES <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="sakhi-saheli.html">SAKHI SAHELI</a></li>
                         </ul>
-                </li>
+                    </li>
                     <li><a href="impact.html">IMPACT IN MOTION</a></li>
                     <li><a href="join-us.html">JOIN US</a></li>
                     <li><a href="contact.html" class="active">CONTACT US</a></li>
                 </ul>
             </div>
-
         </div>
     </nav>
 
@@ -61,59 +57,91 @@
         <div class="contact-bg-overlay"></div>
 
         <div class="container relative-z">
-            <div class="contact-elegant-box" style="text-align: left; padding: 50px;">
+            <div class="contact-elegant-box">
                 
-                <h1 class="section-title text-center">Contact SARV Foundation</h1>
-                <div class="divider-gold-center"></div>
+                <div class="text-center mb-50">
+                    <h1 class="section-title">Contact SARV Foundation</h1>
+                    <p class="section-sub" style="color: var(--gold-accent); font-weight: bold;">For Partnerships, Volunteer & CSR Queries</p>
+                    <div class="divider-gold-center"></div>
+                </div>
 
-                <p class="lead-text text-center" style="font-size: 1rem; margin-bottom: 40px; color: #555;">
-                    We welcome inquiries related to CSR partnerships, institutional collaborations, volunteering, media, and general engagement. SARV Foundation works closely with corporates, public institutions, and community partners to deliver women-centric and social impact initiatives.
-                </p>
-
-                <div class="contact-grid" style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+                <div class="contact-split-layout">
                     
-                    <div class="contact-info-block">
-                        <h3 style="color: var(--primary-brown); margin-bottom: 15px; font-size: 1.4rem;">Get in Touch</h3>
+                    <div class="contact-info-side">
                         
-                        <p style="margin-bottom: 15px;">
-                            <strong>Registered Office</strong> (for official correspondence)<br>
-                            Delhi NCR, India
-                        </p>
-                        
-                        <p style="margin-bottom: 10px;">
-                            <strong>Email:</strong> <a href="mailto:sarv.team.foundation@gmail.com" style="color: var(--primary-brown);">sarv.team.foundation@gmail.com</a>
-                        </p>
-                        
-                        <p style="margin-bottom: 15px;">
-                            <strong>Phone:</strong> <a href="tel:+919654800900" style="color: var(--primary-brown);">+91 96548 00900</a>
-                        </p>
+                        <div class="info-group">
+                            <h3 class="info-title">General Inquiries</h3>
+                            <p><i class="fas fa-envelope"></i> sarv.team.foundation@gmail.com</p>
+                            <p><i class="fas fa-phone-alt"></i> +91 96548 00900</p>
+                        </div>
 
-                        <p style="font-size: 0.9rem; color: #777; font-style: italic;">
-                            *Our team typically responds within 2–3 working days.
-                        </p>
+                        <div class="info-group">
+                            <h3 class="info-title">Partnership & CSR</h3>
+                            <p><i class="fas fa-envelope"></i> sarv.team.foundation@gmail.com</p>
+                            <p><i class="fas fa-phone-alt"></i> +91 96548 00900</p>
+                        </div>
+
+                        <div class="social-follow-section">
+                            <h4>Follow Us @teamsarv</h4>
+                            <div class="social-icons-row">
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="response-note">
+                            <p><i class="fas fa-clock" style="color: var(--gold-accent);"></i> Our team typically responds within 2–3 working days.</p>
+                        </div>
+
                     </div>
 
-                    <div class="contact-info-block" style="border-top: 1px solid #eee; padding-top: 20px;">
-                        <h3 style="color: var(--primary-brown); margin-bottom: 10px; font-size: 1.2rem;">Partnership & CSR Engagement</h3>
-                        <p style="font-size: 0.95rem; color: #444;">
-                            For organisations, CSR teams, and implementation partners seeking collaboration opportunities, please reach out with brief details of your interest. We look forward to exploring meaningful, compliant, and impact-driven partnerships.
-                        </p>
-                    </div>
+                    <div class="contact-form-side">
+                        <h3 class="form-header">Send us a Message</h3>
+                        
+                        <form action="https://formspree.io/f/mjgebzva" method="POST" class="sarv-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
 
-                    <div class="contact-info-block" style="border-top: 1px solid #eee; padding-top: 20px;">
-                        <h3 style="color: var(--primary-brown); margin-bottom: 10px; font-size: 1.2rem;">Privacy & Compliance</h3>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
-                            We respect your privacy. Any information shared with us will be used solely to respond to your inquiry.
-                        </p>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            SARV Foundation operates in alignment with applicable statutory and CSR compliance requirements.
-                        </p>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="purpose">Purpose</label>
+                                <select id="purpose" name="purpose">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Partnership">Partnership Opportunity</option>
+                                    <option value="Media">Media & Press</option>
+                                    <option value="CSR">CSR Collaboration</option>
+                                    <option value="Volunteer">Volunteering</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="How can we help together?" required></textarea>
+                            </div>
+
+                            <p class="privacy-note">We respect your privacy. Your information will only be used to respond to your inquiry.</p>
+
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
                     </div>
 
                 </div>
 
-                <div class="closing-line text-center" style="margin-top: 50px;">
-                    <p style="font-weight: bold; color: var(--gold-accent); font-size: 1.2rem; font-family: 'Playfair Display', serif;">"Built on experience. Focused on impact."</p>
+                <div class="compliance-footer-line">
+                    <p>SARV Foundation operates in alignment with applicable statutory and CSR compliance requirements.</p>
                 </div>
 
             </div>
