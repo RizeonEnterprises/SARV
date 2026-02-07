@@ -11,90 +11,107 @@
 <body>
 
     <nav class="navbar">
-    <div class="container nav-wrapper">
-        
-        <div class="brand-row">
-            <a href="index.html" class="logo-link">
-                <img src="assets/logo final.jpeg" alt="Sarv Foundation Logo">
-                <div class="logo-text">
-                    <h2>SARV</h2>
-                    <span>ONE WORLD | ONE HEART</span>
+        <div class="container nav-wrapper">
+            <div class="brand-row">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo final.jpeg" alt="Sarv Logo">
+                    <div class="logo-text"><h2>SARV</h2><span>ONE WORLD | ONE HEART</span></div>
+                </a>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+            </div>
+            <div class="menu-row">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="dropdown"><a href="about.html" class="dropbtn">ABOUT US <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="essence.html">OUR ESSENCE</a></li>
+                            <li><a href="journey.html">OUR JOURNEY</a></li>
+                            <li><a href="vision.html">OUR VISION</a></li>
+                            <li><a href="mission.html">OUR MISSION</a></li>
+                            <li><a href="values.html">OUR VALUES</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="initiatives.html">INITIATIVES</a></li>
+                    <li><a href="impact.html" class="active">IMPACT IN MOTION</a></li>
+                    <li><a href="sakhi-saheli.html">SAKHI SAHELI</a></li>
+                    <li><a href="join-us.html">JOIN US</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" style="background-image: url('assets/FB_IMG_1581576737122.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Impact in Motion</h1>
+            <p>Moments of Change, Captured in Time.</p>
+        </div>
+    </header>
+
+    <section class="section-padding textured-bg">
+        <div class="container">
+            <div class="text-center mb-50">
+                <h2 class="section-title">Our Gallery</h2>
+                <div class="divider-gold-center"></div>
+                <p>Click on any image to view it in full size.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image_7956e10f-fd3d-4494-bdec-4e8af0c79f7a20230507_115656.jpg" alt="Nari Shakti Award">
                 </div>
-            </a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
 
-        <div class="menu-row">
-            <ul class="nav-menu">
-                <li><a href="index.html">HOME</a></li>
-                
-                <li class="dropdown">
-                    <a href="about.html" class="dropbtn">ABOUT US <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="essence.html">OUR ESSENCE</a></li>
-                        <li><a href="journey.html">OUR JOURNEY</a></li>
-                        <li><a href="vision.html">OUR VISION</a></li>
-                        <li><a href="mission.html">OUR MISSION</a></li>
-                        <li><a href="values.html">OUR VALUES</a></li>
-                    </ul>
-                </li>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/image_fc1e115a-1fc8-44fc-af3e-80932b33172320220706_114518.jpg" alt="Team Workshop">
+                </div>
 
-                <li><a href="initiatives.html">INITIATIVES</a></li>
-                <li><a href="impact.html" class="active">IMPACT IN MOTION</a></li>
-                <li><a href="sakhi-saheli.html">SAKHI SAHELI</a></li>
-                <li><a href="join-us.html">JOIN US</a></li>
-                <li><a href="contact.html">CONTACT US</a></li>
-            </ul>
-        </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/1552279651742 - Copy.jpg" alt="Speaking Event">
+                </div>
 
-    </div>
-</nav>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/1552279478729.jpg" alt="Founders">
+                </div>
 
-    <section class="impact-gallery-section">
-        
-        <div class="impact-overlay-title">
-            <h1>IMPACT IN MOTION</h1>
-            <div class="gold-divider"></div>
-        </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/1547727656317.jpg" alt="Artisan Empowerment">
+                </div>
 
-        <div class="gallery-grid">
-            
-            <div class="gallery-item large">
-                <img src="assets/img 1.png" alt="Women learning digital basics" onerror="this.src='https://via.placeholder.com/600x800/f5f0e6/5d4037?text=Digital+Literacy'">
-                <div class="hover-caption">Digital Didi: Bridging the Gap</div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/FB_IMG_1583815239968.jpg" alt="Panel Discussion">
+                </div>
 
-            <div class="gallery-item wide">
-                <img src="assets/img 2.png" alt="Girls studying" onerror="this.src='https://via.placeholder.com/800x600/fcfbf9/5d4037?text=Sarv+Shikha'">
-                <div class="hover-caption">Sarv Shikha: Educating Dreams</div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/FB_IMG_1579545923480.jpg" alt="Audience">
+                </div>
 
-            <div class="gallery-item quote-box">
-                <div class="quote-content">
-                    <i class="fas fa-quote-left"></i>
-                    <h3>"Every smile is a story. Every story is a step toward change."</h3>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/FB_IMG_1580443822070.jpg" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/DSC_7081.JPG" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/Deepa mallik.JPG" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/DSC_7084.JPG" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/DSC_7846.JPG" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="assets/FB_IMG_1583815239968.jpg" alt="Award Ceremony">
                 </div>
             </div>
-
-            <div class="gallery-item tall">
-                <img src="assets/img 3.png" alt="Smiling elders" onerror="this.src='https://via.placeholder.com/400x800/fff3e0/5d4037?text=Smiles+of+Wisdom'">
-                <div class="hover-caption">Dignity for All</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/img 4.png" alt="Volunteers distributing essentials" onerror="this.src='https://via.placeholder.com/600x600/e0f2f1/5d4037?text=Seva+in+Action'">
-                <div class="hover-caption">Serve Saanjh: Community Seva</div>
-            </div>
-
-            <div class="gallery-item wide">
-                <img src="assets/sakhi saheli flyer.jpeg" alt="Community Children">
-                <div class="hover-caption">Nurturing Future Generations</div>
-            </div>
-
         </div>
     </section>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <footer>
         <div class="container text-center" style="padding: 30px 0; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
@@ -103,7 +120,18 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Inline script for lightbox
+        function openLightbox(element) {
+            const lightbox = document.getElementById('myLightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const src = element.querySelector('img').src;
+            lightbox.style.display = "flex";
+            lightboxImg.src = src;
+        }
+        function closeLightbox() {
+            document.getElementById('myLightbox').style.display = "none";
+        }
+    </script>
 </body>
-
 </html>
-
