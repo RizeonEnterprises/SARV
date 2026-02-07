@@ -260,7 +260,7 @@ ul { list-style: none; }
 
 /* --- IMAGE POSITIONS --- */
 
-/* Image 1: Top Left (img.png) */
+/* Image 1: Top Left (DSC_7257.JPG) */
 .img-1 {
     width: 240px;
     height: 180px;
@@ -280,7 +280,7 @@ ul { list-style: none; }
     z-index: 2;
 }
 
-/* Image 3: Center/Overlay (DSC_7257.JPG) */
+/* Image 3: Center/Overlay (img.png) */
 .img-3 {
     width: 260px;
     height: 200px;
@@ -402,6 +402,7 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
     .timeline-line { width: 3px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
     .timeline-step { width: 100%; }
 }
+
 
 
 
