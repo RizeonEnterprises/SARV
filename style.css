@@ -272,7 +272,7 @@ ul { list-style: none; }
 
 /* Image 2: Bottom Right (DSC_7565.JPG) */
 .img-2 {
-    width: 220px;
+    width: 280px;
     height: 260px;
     bottom: 10px;
     right: 0;
@@ -283,7 +283,7 @@ ul { list-style: none; }
 /* Image 3: Center/Overlay (DSC_7257.JPG) */
 .img-3 {
     width: 180px;
-    height: 140px;
+    height: 220px;
     top: 35%;
     left: 15%;
     transform: rotate(-3deg);
@@ -402,5 +402,6 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
     .timeline-line { width: 3px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
     .timeline-step { width: 100%; }
 }
+
 
 
