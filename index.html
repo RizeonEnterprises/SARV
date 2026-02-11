@@ -81,25 +81,6 @@
     </div>
 </header>
 
-<script>
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-
-    function nextSlide() {
-        // Remove active class from current slide
-        slides[currentSlide].classList.remove('active');
-        
-        // Calculate next slide index
-        currentSlide = (currentSlide + 1) % slides.length;
-        
-        // Add active class to next slide
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Change slide every 4 seconds (4000ms)
-    setInterval(nextSlide, 4000);
-</script>
-
     <section class="section-padding bg-warm">
         <div class="container text-center">
             <h2 class="section-title">One World. One Heart.</h2>
@@ -146,6 +127,27 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    const slides = document.querySelectorAll('.slide');
+    
+    // यह खुद पता लगा लेगा कि कौन सी स्लाइड 'active' है (आपके केस में तीसरी स्लाइड)
+    let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+    if (currentSlide === -1) currentSlide = 0;
+
+    function nextSlide() {
+        // पुरानी स्लाइड से active क्लास हटाएं
+        slides[currentSlide].classList.remove('active');
+        
+        // अगली स्लाइड का नंबर निकालें
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // नई स्लाइड को active करें
+        slides[currentSlide].classList.add('active');
+    }
+
+    // हर 4 सेकंड में स्लाइड बदलें
+    setInterval(nextSlide, 4000);
+</script>
 </body>
 </html>
 
