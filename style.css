@@ -402,65 +402,109 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
     .timeline-line { width: 3px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
     .timeline-step { width: 100%; }
 }
-/* --- HERO SLIDESHOW STYLES --- */
-/* --- HERO SECTION UPDATES --- */
+/* --- HERO SECTION (COMPLETE FIXED CODE) --- */
 
+/* 1. Main Container */
 .cover-hero {
     position: relative;
     height: 85vh;
     overflow: hidden;
     background: #3e2723;
-    /* Centering Code */
+    /* Centering Content */
     display: flex;
-    align-items: center;   /* Vertical Center */
-    justify-content: center; /* Horizontal Center */
+    align-items: center;
+    justify-content: center;
 }
 
-/* Slideshow Container */
+/* 2. Slideshow Wrapper */
 .hero-slideshow {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: 0;
 }
 
-/* Single Color Overlay (No Gradient) */
+/* 3. Individual Slides (Ye code missing tha) */
+.slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Default hidden */
+    transition: opacity 1.5s ease-in-out; /* Fade effect */
+    transform: scale(1);
+}
+
+/* Active Slide (Jo dikhegi) */
+.slide.active {
+    opacity: 1;
+    animation: zoomEffect 20s infinite linear; /* Slow zoom */
+}
+
+/* Zoom Animation Keyframes */
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* 4. Single Color Overlay (Solid Brown) */
 .hero-overlay-solid {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Single Dark Brown Color with 70% Opacity */
-    background-color: rgba(62, 39, 35, 0.7); 
+    background-color: rgba(62, 39, 35, 0.7); /* 70% Dark Brown */
     z-index: 1;
 }
 
-/* Content on Top */
+/* 5. Mandala Pattern (Optional) */
+.mandala-pattern {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.1;
+    background-image: radial-gradient(circle at center, transparent 0%, transparent 20%, #fff 21%, #fff 22%, transparent 23%), radial-gradient(circle at center, transparent 0%, transparent 30%, #fff 31%, #fff 32%, transparent 33%);
+    background-size: 100px 100px;
+    pointer-events: none;
+}
+
+/* 6. Text Content (Centered on Top) */
 .hero-content {
     position: relative;
     z-index: 3;
     width: 100%;
-    max-width: 900px; /* Limits width to keep text nice & centered */
+    max-width: 900px;
     padding: 0 20px;
+    text-align: center;
 }
 
-/* Typography Tweaks for Better Visibility */
 .main-title {
+    font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
+    font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 
 .sub-title {
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: #fdfbf7;
-    font-weight: 400;
     margin-bottom: 20px;
+    font-weight: 400;
 }
 
-/* Responsive Font Sizes */
+.hero-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    color: #fdfbf7;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .main-title { font-size: 3rem; }
     .sub-title { font-size: 1.5rem; }
 }
+
 
 
 
