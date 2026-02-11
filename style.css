@@ -504,6 +504,32 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
     .main-title { font-size: 3rem; }
     .sub-title { font-size: 1.5rem; }
 }
+/* =========================================
+   HERO SECTIONS (All Inner Pages)
+   ================================********* */
+
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* 1. Height Badha di (Index page jaisi badi dikhegi) */
+    height: 85vh; 
+    
+    /* 2. Image Position Center (Taaki puri photo focus mein rahe) */
+    background-position: center center !important; 
+    
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Mobile par thoda chota rakhenge taaki screen na bhare */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh; /* Mobile ke liye adjust */
+    }
+}
 
 
 
