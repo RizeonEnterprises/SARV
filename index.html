@@ -56,8 +56,19 @@
     </div>
 </nav>
 
-    <header class="hero-section" style="height: 100vh; background: linear-gradient(rgba(93, 64, 55, 0.7), rgba(93, 64, 55, 0.7)), url('assets/FB_IMG_1579864171733.jpg') center/cover;">
-    <div class="hero-overlay"></div>
+    <header class="cover-hero">
+    
+    <div class="hero-slideshow">
+        <div class="slide active" style="background-image: url('assets/sakhi saheli flyer.jpeg');"></div>
+        <div class="slide" style="background-image: url('assets/1547727656317.jpg');"></div>
+        <div class="slide" style="background-image: url('assets/FB_IMG_1583815239968.jpg');"></div>
+        <div class="slide" style="background-image: url('assets/FB_IMG_1581576737122.jpg');"></div>
+    </div>
+
+    <div class="hero-overlay-gradient"></div>
+
+    <div class="mandala-pattern"></div>
+
     <div class="container hero-content text-center">
         <h1 class="main-title">Sarv Foundation</h1>
         <h2 class="sub-title">Empowering Lives. Nurturing Humanity.</h2>
@@ -69,6 +80,25 @@
         </div>
     </div>
 </header>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove('active');
+        
+        // Calculate next slide index
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Add active class to next slide
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Change slide every 4 seconds (4000ms)
+    setInterval(nextSlide, 4000);
+</script>
 
     <section class="section-padding bg-warm">
         <div class="container text-center">
