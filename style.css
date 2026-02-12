@@ -225,12 +225,12 @@ ul { list-style: none; }
 .btn-text:hover { color: var(--primary-brown); text-decoration: underline; }
 
 /* --- ESSENCE PAGE (Overlapping Collage) --- */
-
+/* --- BASE STYLES (Jo aapne provide kiye) --- */
 .collage-container {
     position: relative;
+    height: 450px;
     width: 100%;
-    max-width: 450px; /* Width controlled */
-    height: 400px;    /* Sufficient height for overlapping */
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -240,8 +240,7 @@ ul { list-style: none; }
     box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
     border-radius: 4px;
     overflow: hidden;
-    transition: all 0.4s ease; /* Smooth Zoom Effect */
-    cursor: default; /* No pointer cursor implies not clickable */
+    transition: transform 0.3s ease, z-index 0.3s;
 }
 
 .collage-item img {
@@ -251,14 +250,13 @@ ul { list-style: none; }
     display: block;
 }
 
-/* --- HOVER EFFECT: Zoom & Highlight --- */
+/* Hover Effect */
 .collage-item:hover {
-    transform: scale(1.1) !important; /* Zoom in */
-    z-index: 20 !important; /* Bring to front */
-    box-shadow: 0 20px 40px rgba(93, 64, 55, 0.3);
+    transform: scale(1.05) !important; /* Zoom effect */
+    z-index: 10 !important; /* Upar laane ke liye */
 }
 
-/* --- IMAGE POSITIONS --- */
+/* --- POSITIONING (Ye zaroori hai images ko set karne ke liye) --- */
 
 /* Image 1: Top Left (DSC_7257.JPG) */
 .img-1 {
@@ -266,40 +264,41 @@ ul { list-style: none; }
     height: 180px;
     top: 0;
     left: 0;
-    transform: rotate(-5deg);
     z-index: 1;
+    transform: rotate(-5deg); /* Thoda Teda */
 }
 
 /* Image 2: Bottom Right (DSC_7565.JPG) */
 .img-2 {
-    width: 340px;
+    width: 220px;
     height: 260px;
-    bottom: 10px;
+    bottom: 20px;
     right: 0;
-    transform: rotate(4deg);
     z-index: 2;
+    transform: rotate(3deg);
 }
 
 /* Image 3: Center/Overlay (img.png) */
 .img-3 {
-    width: 260px;
-    height: 200px;
-    top: 35%;
-    left: 15%;
-    transform: rotate(-3deg);
+    width: 180px;
+    height: 140px;
+    top: 40%;
+    left: 20%;
     z-index: 3;
-    border-color: var(--gold-accent); /* Gold border for emphasis */
+    transform: rotate(8deg);
+    border-color: #d4af37; /* Optional: Gold border for center image */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 900px) {
-    .split-layout {
-        flex-direction: column; /* Text top, Images bottom */
-    }
+/* Mobile Responsive */
+@media (max-width: 768px) {
     .collage-container {
-        margin-top: 40px;
         height: 350px;
+        max-width: 320px;
+        margin-top: 40px;
     }
+    .img-1 { width: 160px; height: 120px; }
+    .img-2 { width: 150px; height: 180px; }
+    .img-3 { width: 140px; height: 110px; top: 35%; left: 15%; }
 }
 /* Timeline */
 .timeline-container { display: flex; justify-content: space-between; align-items: flex-start; position: relative; margin-top: 50px; padding: 20px 0; }
@@ -611,6 +610,7 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
         display: block;
     }
 }
+
 
 
 
