@@ -526,11 +526,18 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
 
 /*  par thoda chota rakhenge taaki screen na bhare */
 @media (max-width: 1200px) {
-    /* Menu ko default mein chhupane ke liye */
+    /* Ensure the hamburger icon is visible */
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Fix the menu-row container */
     .menu-row {
-        display: none; 
+        display: none; /* Hidden by default on mobile */
         width: 100%;
-        background: #fff;
+        background: #ffffff;
         position: absolute;
         top: 100%;
         left: 0;
@@ -538,34 +545,30 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    /* Jab active class add ho toh show kare */
+    /* Show menu when the 'active' class is added via JavaScript */
     .menu-row.active {
         display: block !important;
     }
 
-    /* Links ko vertical stack karne ke liye */
+    /* Stack the links vertically */
     .nav-menu {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0;
+        padding: 10px 0;
     }
 
     .nav-menu li {
         width: 100%;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #f0f0f0;
     }
 
     .nav-menu a {
-        padding: 15px 20px;
+        padding: 15px 25px;
+        width: 100%;
         display: block;
     }
-
-    /* Hamburger icon ko display karne ke liye */
-    .hamburger {
-        display: block !important;
-        cursor: pointer;
-    }
 }
+
 
 
 
