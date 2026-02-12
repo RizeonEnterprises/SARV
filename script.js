@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger && menuRow) {
         hamburger.addEventListener('click', () => {
-            // Toggle the 'active' class on the menu container
+            // CSS class 'active' ko toggle karega
             menuRow.classList.toggle('active');
             
-            // Toggle icon between 'bars' and 'times' (X)
+            // Icon ko badlega (Bars to X)
             if (icon) {
                 if (menuRow.classList.contains('active')) {
                     icon.classList.replace('fa-bars', 'fa-times');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close the menu automatically when a link is clicked
+    // Link click hote hi menu band ho jaye
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 1200) {
