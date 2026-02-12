@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const menuRow = document.querySelector('.menu-row');
+    const icon = hamburger ? hamburger.querySelector('i') : null;
 
     if (hamburger && menuRow) {
         hamburger.addEventListener('click', () => {
-            // Menu toggle karne ke liye simple active class use karein
+            // Toggle the 'active' class on the menu container
             menuRow.classList.toggle('active');
             
-            // Icon badalne ke liye (optional: bars se X banana)
-            const icon = hamburger.querySelector('i');
-            if (menuRow.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
+            // Toggle icon between 'bars' and 'times' (X)
+            if (icon) {
+                if (menuRow.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
             }
         });
     }
 
-    // Link par click karte hi menu close ho jaye
+    // Close the menu automatically when a link is clicked
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 1200) {
                 menuRow.classList.remove('active');
+                if (icon) icon.classList.replace('fa-times', 'fa-bars');
             }
         });
     });
