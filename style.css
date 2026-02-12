@@ -548,6 +548,16 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
         padding: 20px 0;
     }
 }
+/* Improve focus states for keyboard users */
+a:focus, button:focus {
+    outline: 2px dashed var(--gold-accent);
+    outline-offset: 4px;
+}
+
+/* Ensure the logo text remains readable */
+.logo-text h2 {
+    letter-spacing: 1px;
+}
 
 
 
