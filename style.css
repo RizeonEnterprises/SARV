@@ -526,38 +526,47 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
 
 /*  par thoda chota rakhenge taaki screen na bhare */
 @media (max-width: 1200px) {
+    /* Menu ko default mein chhupane ke liye */
     .menu-row {
-        display: block; /* Change from none */
-        max-height: 0; /* Hidden by default */
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        display: none; 
+        width: 100%;
+        background: #fff;
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
-        background: #fff;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
+    /* Jab active class add ho toh show kare */
     .menu-row.active {
-        max-height: 500px; /* Adjust based on menu height */
-        border-bottom: 3px solid var(--gold-accent);
+        display: block !important;
     }
-    
+
+    /* Links ko vertical stack karne ke liye */
     .nav-menu {
         flex-direction: column;
-        padding: 20px 0;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu a {
+        padding: 15px 20px;
+        display: block;
+    }
+
+    /* Hamburger icon ko display karne ke liye */
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
     }
 }
-/* Improve focus states for keyboard users */
-a:focus, button:focus {
-    outline: 2px dashed var(--gold-accent);
-    outline-offset: 4px;
-}
 
-/* Ensure the logo text remains readable */
-.logo-text h2 {
-    letter-spacing: 1px;
-}
 
 
 
