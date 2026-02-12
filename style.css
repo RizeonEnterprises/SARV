@@ -524,12 +524,31 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
     background-repeat: no-repeat !important;
 }
 
-/* Mobile par thoda chota rakhenge taaki screen na bhare */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 60vh; /* Mobile ke liye adjust */
+/*  par thoda chota rakhenge taaki screen na bhare */
+@media (max-width: 1200px) {
+    .menu-row {
+        display: block; /* Change from none */
+        max-height: 0; /* Hidden by default */
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+    }
+
+    .menu-row.active {
+        max-height: 500px; /* Adjust based on menu height */
+        border-bottom: 3px solid var(--gold-accent);
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        padding: 20px 0;
     }
 }
+
 
 
 
