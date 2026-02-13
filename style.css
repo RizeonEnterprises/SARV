@@ -111,58 +111,64 @@ ul { list-style: none; }
 /* =========================================
    5. HEADER & HERO SECTIONS (Corrected Formatting)
    ================================********* */
+/* =========================================
+   HERO & HEADER SECTIONS (Responsive)
+   ================================********* */
+
+/* 1. Common Styles for Index (.cover-hero) & Inner Pages (.hero-section) */
+.cover-hero, 
 .hero-section {
     position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* FIX: Height 55vh ensures it's tall enough but not full screen */
-    height: 75vh; 
-    /* FIX: Top Center ensures heads/faces aren't cut off */
-    background-position: top center !important; 
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    
+    /* Default Positioning: Center (Sabse safe option) */
+    background-position: center center !important;
 }
 
-.hero-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(62, 39, 35, 0.5), rgba(62, 39, 35, 0.4)); /* Consistent overlay */
-    z-index: 1;
+/* 2. Desktop View (Laptop/PC) - Badi Screen */
+@media (min-width: 1025px) {
+    .cover-hero { height: 85vh; } /* Home page bada */
+    .hero-section { height: 70vh; } /* Inner pages thode chote */
 }
 
-.hero-content { position: relative; z-index: 2; text-align: center; color: #fff; }
-.hero-content h1 { font-size: 3.5rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); margin-bottom: 10px; }
-.hero-content p { font-size: 1.3rem; font-weight: 300; letter-spacing: 1px; color: #fdfbf7; }
-
-/* Cover Hero (Only for Home Page) */
-.cover-hero {
-    position: relative;
-    height: 85vh;
-    background-size: cover !important;
-    background-position: center !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* 3. Tablet View (iPad/Tabs) */
+@media (max-width: 1024px) {
+    .cover-hero { height: 60vh; }
+    .hero-section { height: 50vh; }
 }
-.hero-overlay-gradient {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(93, 64, 55, 0.85) 0%, rgba(212, 175, 55, 0.4) 100%);
-    z-index: 1;
-}
-.mandala-pattern {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.1;
-    background-image: radial-gradient(circle at center, transparent 0%, transparent 20%, #fff 21%, #fff 22%, transparent 23%), radial-gradient(circle at center, transparent 0%, transparent 30%, #fff 31%, #fff 32%, transparent 33%);
-    background-size: 100px 100px;
-}
-.main-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-weight: 700; color: #fff; margin-bottom: 10px; z-index: 3; position: relative; }
-.sub-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #fdfbf7; margin-bottom: 20px; font-weight: 400; z-index: 3; position: relative; }
-.hero-text { font-family: 'Lato', sans-serif; font-size: 1.4rem; color: #fdfbf7; z-index: 3; position: relative; }
 
-.btn-hero { display: inline-block; padding: 15px 35px; margin: 10px; border-radius: 50px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; font-size: 0.9rem; position: relative; z-index: 3; }
-.btn-hero.primary { background-color: var(--gold-accent); color: var(--primary-brown); }
-.btn-hero.secondary { border: 2px solid #fff; color: #fff; }
-.btn-hero:hover { background-color: #fff; color: var(--primary-brown); }
+/* 4. Mobile View (Phones) - Choti Screen */
+@media (max-width: 768px) {
+    .cover-hero { height: 50vh; } /* Mobile pe aadha screen */
+    .hero-section { height: 40vh; } /* Inner pages thode aur chote */
+    
+    /* Mobile Tip: Mobile pe aksar chehre upar hote hain, isliye Top focus karein */
+    .hero-section { 
+        background-position: top center !important; 
+    }
+}
 
+/* --- SLIDESHOW FIX (Index Page ke liye) --- */
+/* Ye zaroori hai taaki slide puri height le lein */
+.hero-slideshow, .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* --- TEXT SIZE ADJUSTMENT (Mobile ke liye) --- */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.5rem; } /* Text chota kiya */
+    .sub-title { font-size: 1.2rem; }
+    .hero-content { padding: 0 15px; }
+}
 /* =========================================
    6. IMPACT & GALLERY
    ================================********* */
@@ -610,6 +616,7 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
         display: block;
     }
 }
+
 
 
 
