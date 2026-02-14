@@ -22,7 +22,7 @@ body {
     font-family: var(--font-body);
     color: var(--primary-brown);
     line-height: 1.6;
-    background-color: var(--soft-beige); /* Default Clean Background for all pages */
+    background-color: var(--soft-beige);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,31 +31,24 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--dark-brown);
 }
 
-/* --- TEXTURED BACKGROUND (Only for Join Us & Impact Pages) --- */
-/* HTML usage: <section class="section-padding textured-bg"> */
-.textured-bg {
-    background-color: var(--soft-beige);
-    background-image: radial-gradient(#d4af37 1px, transparent 1px);
-    background-size: 25px 25px; /* Dots spacing */
-}
-
-/* Other Background Utilities */
-.bg-warm { background-color: #fdfbf7; }
-.bg-white { background-color: #ffffff; }
-.bg-beige { background-color: #f7f3e8; }
-
-input, button, select, textarea { font-family: var(--font-body); }
-a { text-decoration: none; transition: 0.3s; color: inherit; }
-ul { list-style: none; }
-
+/* --- UTILITIES --- */
 .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 .text-center { text-align: center; }
 .mb-50 { margin-bottom: 50px; }
-.mb-40 { margin-bottom: 40px; }
 .section-padding { padding: 80px 0; }
+.divider-gold-center { width: 100px; height: 3px; background-color: var(--gold-accent); margin: 20px auto; }
+
+/* Backgrounds */
+.textured-bg {
+    background-color: var(--soft-beige);
+    background-image: radial-gradient(#d4af37 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+.bg-warm { background-color: #fdfbf7; }
+.bg-white { background-color: #ffffff; }
 
 /* =========================================
-   3. NAVIGATION
+   3. NAVIGATION (Desktop & Mobile)
    ================================********* */
 .navbar {
     background: #ffffff;
@@ -69,14 +62,14 @@ ul { list-style: none; }
 
 .nav-wrapper { display: flex; flex-direction: column; gap: 15px; }
 
-/* Row 1: Brand */
+/* Branding Row */
 .brand-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 5px; }
 .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo-link img { height: 60px; }
 .logo-text h2 { margin: 0; font-size: 2rem; line-height: 1; font-family: 'Playfair Display', serif; color: var(--primary-brown); }
 .logo-text span { font-size: 0.75rem; letter-spacing: 2px; color: var(--gold-accent); text-transform: uppercase; display: block; margin-top: 4px; font-weight: 600; }
 
-/* Row 2: Menu */
+/* Menu Row (Desktop) */
 .menu-row { width: 100%; }
 .nav-menu { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 0; }
 .nav-menu li { list-style: none; position: relative; }
@@ -85,13 +78,13 @@ ul { list-style: none; }
 }
 .nav-menu a:hover, .nav-menu a.active { color: var(--gold-accent); }
 
-/* Dropdown */
+/* Dropdown (Desktop) */
 .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); z-index: 1001; top: 100%; left: 0; padding: 10px 0; border-top: 3px solid var(--gold-accent); }
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown-content li a { padding: 10px 20px; font-size: 0.8rem; color: #555; border-bottom: 1px solid #f5f5f5; }
 .dropdown-content li a:hover { background-color: #faf7f2; color: var(--primary-brown); }
 
-/* Hamburger */
+/* Hamburger (Hidden on Desktop) */
 .hamburger { display: none; font-size: 1.8rem; color: var(--primary-brown); cursor: pointer; }
 
 /* =========================================
@@ -103,287 +96,183 @@ ul { list-style: none; }
 .btn-brown { background-color: var(--primary-brown); color: var(--white); padding: 12px 30px; font-weight: 700; text-transform: uppercase; display: inline-block; border-radius: 4px; }
 .btn-brown:hover { background-color: var(--gold-accent); }
 
-.btn-link { margin-top: auto; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; color: var(--primary-brown); text-decoration: none; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.3s; }
-.btn-link:hover { gap: 10px; }
-
-.divider-gold-center { width: 100px; height: 3px; background-color: var(--gold-accent); margin: 20px auto; }
+.btn-hero { display: inline-block; padding: 15px 35px; margin: 10px; border-radius: 50px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; font-size: 0.9rem; }
+.btn-hero.primary { background-color: var(--gold-accent); color: var(--primary-brown); }
+.btn-hero.secondary { border: 2px solid #fff; color: #fff; }
+.btn-hero:hover { background-color: #fff; color: var(--primary-brown); }
 
 /* =========================================
-   5. HEADER & HERO SECTIONS (Corrected Formatting)
-   ================================********* */
-/* =========================================
-   SMART RESPONSIVE HERO SECTION
+   5. HERO & SLIDESHOW (Smart Responsive)
    ================================********* */
 
-/* 1. SABHI DEVICES KE LIYE COMMON SETTINGS */
+/* Base Styles for All Heros */
 .cover-hero, 
-.hero-section,
-.hero-slideshow, 
-.slide {
+.hero-section {
     position: relative;
     width: 100%;
-    /* Image ko box cover karne do, lekin stretch mat karo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    /* By default, photo ka upar ka hissa (Faces) focus mein rahe */
-    background-position: top center !important; 
+    overflow: hidden;
 }
 
-/* 2. DESKTOP / LAPTOP (Badi Screen) */
-/* Jab screen chaudi ho, to height badi rakho */
-@media (min-width: 1025px) {
-    .cover-hero { 
-        height: 85vh; /* Home page bada */
-    }
-    .hero-section { 
-        height: 60vh; /* Inner pages normal */
-        background-position: center center !important; /* Laptop pe center thik hai */
-    }
-}
-
-/* 3. TABLET (iPad wagera) */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .cover-hero { height: 60vh; }
-    .hero-section { height: 50vh; }
-}
-
-/* 4. MOBILE (Phone) - Yahan "Automatic" adjustment hoga */
-@media (max-width: 768px) {
-    /* Height kam kar di taaki browser photo ko zabardasti zoom na kare */
-    .cover-hero { 
-        height: 50vh; 
-        min-height: 400px; /* Isse chota nahi hoga taaki text fit aaye */
-    }
-    
-    .hero-section { 
-        height: 35vh; 
-        min-height: 250px; 
-    }
-
-    /* Mobile pe photo ka 'Top Center' dikhana zaroori hai (Sir na kate) */
-    .slide, .hero-section {
-        background-position: top center !important;
-    }
-    
-    /* Text size chota kiya taaki photo dikhe */
-    .main-title { font-size: 2.2rem; margin-bottom: 5px; }
-    .sub-title { font-size: 1.1rem; margin-bottom: 10px; }
-    .hero-text { display: none; } /* Mobile pe lamba text chupana better hai */
-}
-/* --- SLIDESHOW FIX (Index Page ke liye) --- */
-/* Ye zaroori hai taaki slide puri height le lein */
+/* Slideshow Logic (Index Page) */
 .hero-slideshow, .slide {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background-size: cover;
     background-position: center center;
+    /* Default Hidden */
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1);
+    z-index: 0;
+}
+.slide.active {
+    opacity: 1;
+    animation: zoomEffect 20s infinite linear;
+}
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
 }
 
-/* --- TEXT SIZE ADJUSTMENT (Mobile ke liye) --- */
+/* Overlay & Content */
+.hero-overlay-solid {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(62, 39, 35, 0.7); /* Solid Brown Overlay */
+    z-index: 1;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(62, 39, 35, 0.5), rgba(62, 39, 35, 0.4));
+    z-index: 1;
+}
+.hero-content {
+    position: relative; z-index: 3; text-align: center; color: #fff; width: 100%; max-width: 900px;
+}
+.main-title { font-size: 4.5rem; color: #ffffff; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); margin-bottom: 10px; }
+.sub-title { font-size: 2rem; color: #fdfbf7; font-weight: 400; margin-bottom: 20px; }
+.hero-text { font-size: 1.4rem; color: #fdfbf7; font-weight: 300; }
+
+/* --- RESPONSIVE HERO HEIGHTS --- */
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .cover-hero { height: 85vh; }
+    .hero-section { height: 60vh; background-position: center center !important; }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .cover-hero { height: 60vh; }
+    .hero-section { height: 50vh; }
+}
+
+/* Mobile (Auto Adjust) */
 @media (max-width: 768px) {
-    .main-title { font-size: 2.5rem; } /* Text chota kiya */
-    .sub-title { font-size: 1.2rem; }
-    .hero-content { padding: 0 15px; }
+    .cover-hero { height: 50vh; min-height: 400px; }
+    .hero-section { height: 35vh; min-height: 250px; }
+    
+    /* Focus Top Center (Faces) on Mobile */
+    .slide, .hero-section { background-position: top center !important; }
+    
+    .main-title { font-size: 2.2rem; }
+    .sub-title { font-size: 1.1rem; }
+    .hero-text { display: none; } /* Hide long text on mobile */
 }
-/* =========================================
-   6. IMPACT & GALLERY
-   ================================********* */
-.impact-gallery-section { position: relative; padding: 20px; background-color: var(--soft-beige); min-height: 100vh; }
-.impact-overlay-title { text-align: center; padding: 60px 0 40px; position: relative; z-index: 2; }
-.impact-overlay-title h1 { font-size: 4rem; color: var(--primary-brown); letter-spacing: 3px; margin-bottom: 15px; }
 
-.gallery-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 40px;
+/* =========================================
+   6. COMPLIANCE & WHO WE ARE (Layout Fix)
+   ================================********* */
+.split-layout { display: flex; gap: 50px; align-items: flex-start; }
+.text-block, .image-block { flex: 1; }
+.lead-text { font-size: 1.2rem; color: var(--primary-brown); font-style: italic; margin-bottom: 20px; }
+
+/* Compliance Cards (Transparent Wrapper) */
+.compliance-row { display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+.logo-card { 
+    background: #fff; padding: 15px; border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08); 
+    display: flex; align-items: center; justify-content: center; 
+    width: 140px; flex-shrink: 0; 
 }
+.text-card { 
+    background: #fff; padding: 25px; border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08); 
+    flex-grow: 1; border-left: 5px solid var(--gold-accent); 
+}
+.cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; list-style: none; }
+
+/* =========================================
+   7. ESSENCE COLLAGE (Overlapping Images)
+   ================================********* */
+.collage-container {
+    position: relative; height: 450px; width: 100%; max-width: 500px; margin: 0 auto;
+}
+.collage-item {
+    position: absolute; border: 6px solid #fff; box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
+    border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, z-index 0.3s;
+}
+.collage-item:hover { transform: scale(1.05) !important; z-index: 10 !important; }
+.collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Positions */
+.img-1 { width: 240px; height: 180px; top: 0; left: 0; z-index: 1; transform: rotate(-5deg); }
+.img-2 { width: 220px; height: 260px; bottom: 20px; right: 0; z-index: 2; transform: rotate(3deg); }
+.img-3 { width: 180px; height: 140px; top: 40%; left: 20%; z-index: 3; transform: rotate(8deg); border-color: var(--gold-accent); }
+
+/* =========================================
+   8. IMPACT GALLERY & LIGHTBOX
+   ================================********* */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
 .gallery-item {
-    position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
-    height: 300px; /* Fixed height for uniformity */
-    background: #fff; border: 4px solid #fff; transition: transform 0.3s ease; cursor: pointer;
+    position: relative; height: 300px; background: #fff; border: 4px solid #fff; 
+    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15); overflow: hidden; 
+    border-radius: 8px; transition: transform 0.3s ease; cursor: pointer;
 }
 .gallery-item:hover { transform: scale(1.03); z-index: 5; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 
-.hover-caption { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(62, 39, 35, 0.9)); color: #fff; padding: 20px; transform: translateY(100%); transition: transform 0.3s ease; }
-.gallery-item:hover .hover-caption { transform: translateY(0); }
-
-/* Lightbox */
-.lightbox { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
-.lightbox-content { margin: auto; display: block; width: 80%; max-width: 900px; max-height: 80vh; object-fit: contain; border: 4px solid var(--white); }
+.lightbox { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+.lightbox-content { margin: auto; display: block; width: 80%; max-width: 900px; max-height: 80vh; object-fit: contain; border: 4px solid #fff; }
 .close-btn { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
 
 /* =========================================
-   7. PAGE SPECIFIC SECTIONS
+   9. PAGE SPECIFIC (Vision, Mission, Values, Contact)
    ================================********* */
-/* Project Grid */
-.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.project-card { background: var(--white); border: 1px solid #e0d4c3; border-radius: 6px; overflow: hidden; transition: 0.3s; }
-.project-card:hover { box-shadow: 0 15px 30px rgba(93, 64, 55, 0.1); transform: translateY(-5px); }
-
-/* Initiatives */
-.initiatives-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; }
-.initiative-card { border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s; }
-.initiative-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(93, 64, 55, 0.1); }
-.card-image-box { height: 250px; width: 100%; overflow: hidden; }
-.card-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.initiative-card:hover .card-image-box img { transform: scale(1.05); }
-.card-content { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; background: #fff; }
-
-.pastel-pink { border-bottom: 4px solid #f8bbd0; background-color: #fdf2f5; }
-.pastel-green { border-bottom: 4px solid #c8e6c9; background-color: #f1f8e9; }
-.pastel-blue { border-bottom: 4px solid #bbdefb; background-color: #f3f9fe; }
-.pastel-orange { border-bottom: 4px solid #ffe0b2; background-color: #fff8f0; }
-.pastel-purple { border-bottom: 4px solid #ce93d8; background-color: #f3e5f5; }
-
-/* Join Us */
-.join-grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-.join-card { background: white; padding: 40px 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-bottom: 4px solid transparent; transition: 0.3s; }
-.join-card:hover { transform: translateY(-5px); border-bottom-color: var(--gold-accent); }
-.icon-circle { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; font-size: 2rem; color: white; }
-.earth-tone-1 { background-color: #8D6E63; }
-.earth-tone-2 { background-color: #D4AF37; }
-.earth-tone-3 { background-color: #5D4037; }
-.earth-tone-4 { background-color: #A1887F; }
-.btn-text { color: var(--gold-accent); font-weight: bold; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: color 0.3s; }
-.btn-text:hover { color: var(--primary-brown); text-decoration: underline; }
-
-/* --- ESSENCE PAGE (Overlapping Collage) --- */
-/* --- BASE STYLES (Jo aapne provide kiye) --- */
-.collage-container {
-    position: relative;
-    height: 450px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.collage-item {
-    position: absolute;
-    border: 6px solid #fff;
-    box-shadow: 0 10px 25px rgba(93, 64, 55, 0.15);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s ease, z-index 0.3s;
-}
-
-.collage-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Hover Effect */
-.collage-item:hover {
-    transform: scale(1.05) !important; /* Zoom effect */
-    z-index: 10 !important; /* Upar laane ke liye */
-}
-
-/* --- POSITIONING (Ye zaroori hai images ko set karne ke liye) --- */
-
-/* Image 1: Top Left (DSC_7257.JPG) */
-.img-1 {
-    width: 240px;
-    height: 180px;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transform: rotate(-5deg); /* Thoda Teda */
-}
-
-/* Image 2: Bottom Right (DSC_7565.JPG) */
-.img-2 {
-    width: 220px;
-    height: 260px;
-    bottom: 20px;
-    right: 0;
-    z-index: 2;
-    transform: rotate(3deg);
-}
-
-/* Image 3: Center/Overlay (img.png) */
-.img-3 {
-    width: 180px;
-    height: 140px;
-    top: 40%;
-    left: 20%;
-    z-index: 3;
-    transform: rotate(8deg);
-    border-color: #d4af37; /* Optional: Gold border for center image */
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .collage-container {
-        height: 350px;
-        max-width: 320px;
-        margin-top: 40px;
-    }
-    .img-1 { width: 160px; height: 120px; }
-    .img-2 { width: 150px; height: 180px; }
-    .img-3 { width: 140px; height: 110px; top: 35%; left: 15%; }
-}
-/* Timeline */
-.timeline-container { display: flex; justify-content: space-between; align-items: flex-start; position: relative; margin-top: 50px; padding: 20px 0; }
-.timeline-line { position: absolute; top: 40px; left: 50px; right: 50px; height: 3px; background: var(--gold-accent); z-index: 0; }
-.timeline-step { position: relative; z-index: 1; text-align: center; flex: 1; padding: 0 10px; }
-.timeline-icon { width: 80px; height: 80px; background: #fff; border: 3px solid var(--gold-accent); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--primary-brown); box-shadow: 0 5px 15px rgba(93, 64, 55, 0.1); transition: transform 0.3s; }
-.timeline-step:hover .timeline-icon { transform: scale(1.1); background: var(--gold-accent); color: #fff; }
-
-/* Vision & Mission */
+/* Vision */
 .vision-card { background: #fff; padding: 60px 40px; border-radius: 8px; box-shadow: 0 10px 40px rgba(93, 64, 55, 0.08); border-top: 6px solid var(--gold-accent); }
 .vision-statement { font-family: 'Playfair Display', serif; font-size: 1.8rem; line-height: 1.6; color: var(--primary-brown); font-style: italic; }
+
+/* Mission */
 .mission-grid-layout { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 20px; }
 .mission-block { display: flex; align-items: center; padding: 40px; border-radius: 8px; transition: transform 0.3s ease; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 .mission-block:hover { transform: translateY(-5px); }
 .gold-block { background: linear-gradient(135deg, #d4af37 0%, #c5a059 100%); }
 .maroon-block { background: linear-gradient(135deg, #800000 0%, #5c0000 100%); }
-.brown-block { background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%); }
-.light-block { background-color: #fff8e1; color: #5d4037; border: 2px solid #d4af37; }
 
 /* Values */
 .values-grid-large { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 30px; }
 .value-card-large { background: #fff; padding: 40px 20px; border-radius: 8px; text-align: center; box-shadow: 0 5px 20px rgba(93, 64, 55, 0.05); transition: transform 0.3s ease; border-bottom: 4px solid transparent; }
 .value-card-large:hover { transform: translateY(-10px); border-bottom-color: var(--gold-accent); }
 .icon-circle-large { width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 2.5rem; color: #fff; box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-.earth-1 { background-color: #8D6E63; }
-.earth-2 { background-color: #BCAAA4; }
-.earth-3 { background-color: #5D4037; }
-.earth-4 { background-color: #D7CCC8; color: var(--primary-brown); }
+.earth-1 { background-color: #8D6E63; } .earth-2 { background-color: #BCAAA4; } .earth-3 { background-color: #5D4037; } .earth-4 { background-color: #D7CCC8; color: var(--primary-brown); }
 
-/* =========================================
-   8. CONTACT PAGE (Modern Layout)
-   ================================********* */
+/* Contact Modern */
 .contact-modern-section { position: relative; padding: 60px 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-.contact-bg-blur { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    background: url('assets/FB_IMG_1579545923480.jpg') center/cover no-repeat; 
-    opacity: 0.15; filter: blur(8px); z-index: 0; 
-}
-
+.contact-bg-blur { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/FB_IMG_1579545923480.jpg') center/cover no-repeat; opacity: 0.15; filter: blur(8px); z-index: 0; }
 .contact-grid-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: flex-start; z-index: 2; position: relative; }
-.contact-details-side { display: flex; flex-direction: column; gap: 20px; }
-.detail-card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08); display: flex; align-items: flex-start; gap: 20px; border-left: 5px solid var(--gold-accent); transition: transform 0.3s ease; }
-.detail-card:hover { transform: translateY(-5px); }
-.card-icon { width: 45px; height: 45px; background: #fdfbf7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-brown); font-size: 1.2rem; flex-shrink: 0; border: 1px solid #eee; }
-.card-info h4 { font-size: 1.1rem; color: var(--primary-brown); margin-bottom: 5px; font-weight: 700; }
-.card-info p { font-size: 0.95rem; color: #555; margin-bottom: 2px; line-height: 1.4; }
-.card-info a:hover { color: var(--gold-accent); }
-
-.social-card { display: block; text-align: center; border-left: none; border-top: 5px solid var(--primary-brown); }
-.social-icons-row { display: flex; justify-content: center; gap: 15px; }
-.social-icons-row a { width: 40px; height: 40px; background: var(--soft-beige); color: var(--primary-brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gold-accent); transition: 0.3s; }
-.social-icons-row a:hover { background: var(--gold-accent); color: white; }
-
+.detail-card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08); display: flex; align-items: flex-start; gap: 20px; border-left: 5px solid var(--gold-accent); }
 .contact-form-panel { background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(93, 64, 55, 0.1); }
-.sarv-form-modern input, .sarv-form-modern select, .sarv-form-modern textarea { width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px; font-family: 'Lato', sans-serif; background: #fcfcfc; margin-bottom: 15px; }
-.sarv-form-modern input:focus, .sarv-form-modern textarea:focus { border-color: var(--gold-accent); outline: none; background: #fff; }
-.btn-submit-modern { width: 100%; background-color: var(--primary-brown); color: #fff; padding: 15px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-.btn-submit-modern:hover { background-color: var(--gold-accent); }
-.response-badge { margin-top: 25px; padding: 10px; background: #f1f8e9; color: #558b2f; font-size: 0.85rem; border-radius: 4px; text-align: center; font-weight: 600; }
+.sarv-form-modern input, .sarv-form-modern textarea { width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 6px; background: #fcfcfc; margin-bottom: 15px; }
+.btn-submit-modern { width: 100%; background-color: var(--primary-brown); color: #fff; padding: 15px; border: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; cursor: pointer; }
 
 /* =========================================
-   9. FOOTER
+   10. FOOTER
    ================================********* */
 footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
 .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
@@ -392,257 +281,57 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
 .col a:hover { color: var(--gold-accent); padding-left: 5px; }
 
 /* =========================================
-   10. RESPONSIVE
+   11. MOBILE NAVIGATION & GLOBAL RESPONSIVE
    ================================********* */
 @media (max-width: 1200px) {
-    .menu-row { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #fff; padding: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .menu-row.active { display: block; }
-    .nav-menu { flex-direction: column; align-items: flex-start; }
-    .nav-menu li { width: 100%; border-bottom: 1px solid #eee; }
-    .nav-menu a { padding: 15px 20px; }
-    .hamburger { display: block; }
-    .dropdown-content { position: static; display: none; box-shadow: none; border-top: none; background-color: #f9f9f9; padding-left: 20px; }
+    /* Navbar Layout for Mobile/Tablet */
+    .brand-row { border-bottom: none; } /* Remove line on mobile */
+    
+    /* Hamburger Visible */
+    .hamburger { display: block !important; z-index: 1001; }
+
+    /* Hide Menu Default */
+    .menu-row {
+        display: none;
+        width: 100%; background: #ffffff;
+        position: absolute; top: 100%; left: 0;
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-top: 2px solid var(--gold-accent);
+    }
+
+    /* Show Menu when JS adds 'active' */
+    .menu-row.active { display: block !important; animation: slideDown 0.3s ease; }
+    
+    .nav-menu { flex-direction: column; align-items: flex-start; padding: 0; }
+    .nav-menu li { width: 100%; border-bottom: 1px solid #f0f0f0; }
+    .nav-menu a { padding: 15px 25px; width: 100%; display: block; }
+
+    /* Dropdown inside Mobile */
+    .dropdown-content {
+        position: static; display: none; box-shadow: none; border-top: none;
+        background-color: #f9f9f9; padding-left: 20px;
+    }
     .dropdown:hover .dropdown-content { display: block; }
 }
 
 @media (max-width: 900px) {
-    .contact-grid-layout { grid-template-columns: 1fr; }
+    .contact-grid-layout, .split-layout { grid-template-columns: 1fr; }
     .contact-form-panel { padding: 30px; }
-    .form-row { grid-template-columns: 1fr; }
-    .hero-section { height: 40vh; }
 }
 
 @media (max-width: 768px) {
-    .main-title { font-size: 3rem; }
-    .sub-title { font-size: 1.5rem; }
-    .gallery-grid { display: flex; flex-direction: column; }
-    .gallery-item { height: 300px; }
-    .project-grid, .initiatives-grid, .values-grid-large, .mission-grid-layout, .join-grid-layout { grid-template-columns: 1fr; }
-    .split-layout { flex-direction: column; }
-    .footer-content { grid-template-columns: 1fr; text-align: center; }
-    .timeline-container { flex-direction: column; align-items: center; gap: 30px; }
-    .timeline-line { width: 3px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
-    .timeline-step { width: 100%; }
-}
-/* --- HERO SECTION (COMPLETE FIXED CODE) --- */
-
-/* 1. Main Container */
-.cover-hero {
-    position: relative;
-    height: 85vh;
-    overflow: hidden;
-    background: #3e2723;
-    /* Centering Content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 2. Slideshow Wrapper */
-.hero-slideshow {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 0;
-}
-
-/* 3. Individual Slides (Ye code missing tha) */
-.slide {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0; /* Default hidden */
-    transition: opacity 1.5s ease-in-out; /* Fade effect */
-    transform: scale(1);
-}
-
-/* Active Slide (Jo dikhegi) */
-.slide.active {
-    opacity: 1;
-    animation: zoomEffect 20s infinite linear; /* Slow zoom */
-}
-
-/* Zoom Animation Keyframes */
-@keyframes zoomEffect {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-}
-
-/* 4. Single Color Overlay (Solid Brown) */
-.hero-overlay-solid {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(62, 39, 35, 0.7); /* 70% Dark Brown */
-    z-index: 1;
-}
-
-/* 5. Mandala Pattern (Optional) */
-.mandala-pattern {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.1;
-    background-image: radial-gradient(circle at center, transparent 0%, transparent 20%, #fff 21%, #fff 22%, transparent 23%), radial-gradient(circle at center, transparent 0%, transparent 30%, #fff 31%, #fff 32%, transparent 33%);
-    background-size: 100px 100px;
-    pointer-events: none;
-}
-
-/* 6. Text Content (Centered on Top) */
-.hero-content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    max-width: 900px;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-}
-
-.sub-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #fdfbf7;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.hero-text {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;
-    color: #fdfbf7;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-title { font-size: 3rem; }
-    .sub-title { font-size: 1.5rem; }
-}
-/* =========================================
-   HERO SECTIONS (All Inner Pages)
-   ================================********* */
-
-.hero-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* 1. Height Badha di (Index page jaisi badi dikhegi) */
-    height: 85vh; 
-    
-    /* 2. Image Position Center (Taaki puri photo focus mein rahe) */
-    background-position: center center !important; 
-    
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-}
-
-/*  par thoda chota rakhenge taaki screen na bhare */
-@media (max-width: 1200px) {
-    /* Ensure the hamburger icon is visible */
-    .hamburger {
-        display: block !important;
-        cursor: pointer;
-        z-index: 1001;
+    .gallery-grid, .project-grid, .initiatives-grid, .mission-grid-layout, .footer-content { 
+        grid-template-columns: 1fr; 
     }
-
-    /* Fix the menu-row container */
-    .menu-row {
-        display: none; /* Hidden by default on mobile */
-        width: 100%;
-        background: #ffffff;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    /* Show menu when the 'active' class is added via JavaScript */
-    .menu-row.active {
-        display: block !important;
-    }
-
-    /* Stack the links vertically */
-    .nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .nav-menu a {
-        padding: 15px 25px;
-        width: 100%;
-        display: block;
-    }
-}
-@media (max-width: 1200px) {
-    /* Hamburger icon ko hamesha upar dikhane ke liye */
-    .hamburger {
-        display: block !important;
-        position: relative;
-        z-index: 1001;
-    }
-
-    /* Mobile menu container ki settings */
-    .menu-row {
-        display: none; /* Default hidden */
-        width: 100%;
-        background: #ffffff;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    /* Ye class JavaScript toggle karega menu dikhane ke liye */
-    .menu-row.active {
-        display: block !important;
-    }
-
-    /* Menu links ko vertical stack karne ke liye */
-    .nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .nav-menu a {
-        padding: 15px 25px;
-        width: 100%;
-        display: block;
-    }
+    .collage-container { height: 350px; max-width: 320px; margin-top: 40px; }
+    .img-1 { width: 160px; height: 120px; }
+    .img-2 { width: 150px; height: 180px; }
+    .img-3 { width: 140px; height: 110px; top: 35%; left: 15%; }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Slide Down Animation */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
