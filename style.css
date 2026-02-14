@@ -112,47 +112,64 @@ ul { list-style: none; }
    5. HEADER & HERO SECTIONS (Corrected Formatting)
    ================================********* */
 /* =========================================
-   HERO & HEADER SECTIONS (Responsive)
+   SMART RESPONSIVE HERO SECTION
    ================================********* */
 
-/* 1. Common Styles for Index (.cover-hero) & Inner Pages (.hero-section) */
+/* 1. SABHI DEVICES KE LIYE COMMON SETTINGS */
 .cover-hero, 
-.hero-section {
+.hero-section,
+.hero-slideshow, 
+.slide {
     position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Image ko box cover karne do, lekin stretch mat karo */
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    
-    /* Default Positioning: Center (Sabse safe option) */
-    background-position: center center !important;
+    /* By default, photo ka upar ka hissa (Faces) focus mein rahe */
+    background-position: top center !important; 
 }
 
-/* 2. Desktop View (Laptop/PC) - Badi Screen */
+/* 2. DESKTOP / LAPTOP (Badi Screen) */
+/* Jab screen chaudi ho, to height badi rakho */
 @media (min-width: 1025px) {
-    .cover-hero { height: 85vh; } /* Home page bada */
-    .hero-section { height: 70vh; } /* Inner pages thode chote */
+    .cover-hero { 
+        height: 85vh; /* Home page bada */
+    }
+    .hero-section { 
+        height: 60vh; /* Inner pages normal */
+        background-position: center center !important; /* Laptop pe center thik hai */
+    }
 }
 
-/* 3. Tablet View (iPad/Tabs) */
-@media (max-width: 1024px) {
+/* 3. TABLET (iPad wagera) */
+@media (max-width: 1024px) and (min-width: 769px) {
     .cover-hero { height: 60vh; }
     .hero-section { height: 50vh; }
 }
 
-/* 4. Mobile View (Phones) - Choti Screen */
+/* 4. MOBILE (Phone) - Yahan "Automatic" adjustment hoga */
 @media (max-width: 768px) {
-    .cover-hero { height: 50vh; } /* Mobile pe aadha screen */
-    .hero-section { height: 40vh; } /* Inner pages thode aur chote */
-    
-    /* Mobile Tip: Mobile pe aksar chehre upar hote hain, isliye Top focus karein */
-    .hero-section { 
-        background-position: top center !important; 
+    /* Height kam kar di taaki browser photo ko zabardasti zoom na kare */
+    .cover-hero { 
+        height: 50vh; 
+        min-height: 400px; /* Isse chota nahi hoga taaki text fit aaye */
     }
-}
+    
+    .hero-section { 
+        height: 35vh; 
+        min-height: 250px; 
+    }
 
+    /* Mobile pe photo ka 'Top Center' dikhana zaroori hai (Sir na kate) */
+    .slide, .hero-section {
+        background-position: top center !important;
+    }
+    
+    /* Text size chota kiya taaki photo dikhe */
+    .main-title { font-size: 2.2rem; margin-bottom: 5px; }
+    .sub-title { font-size: 1.1rem; margin-bottom: 10px; }
+    .hero-text { display: none; } /* Mobile pe lamba text chupana better hai */
+}
 /* --- SLIDESHOW FIX (Index Page ke liye) --- */
 /* Ye zaroori hai taaki slide puri height le lein */
 .hero-slideshow, .slide {
@@ -616,6 +633,7 @@ footer { background: var(--dark-brown); color: #d7ccc8; padding: 60px 0 20px; }
         display: block;
     }
 }
+
 
 
 
