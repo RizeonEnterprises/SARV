@@ -238,5 +238,16 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Mobile Menu Toggle Script
+    const hamburger = document.querySelector('.hamburger');
+    const menuRow = document.querySelector('.menu-row');
+
+    if (hamburger && menuRow) {
+        hamburger.addEventListener('click', () => {
+            menuRow.classList.toggle('active'); // CSS class toggle karega
+        });
+    }
+</script>
 </body>
 </html>
